@@ -40,6 +40,11 @@ public class BienImmobilier {
 	@JoinColumn(name="id_client", referencedColumnName="id_client")//côté porteur FK
 	private Client client;
 	
+	//ManyBienImmobilier to One Proprietaire
+	@ManyToOne
+	@JoinColumn(name="id_proprietaire", referencedColumnName="id_proprietaire")//côté porteur FK
+	private Proprietaire proprietaire;
+	
 	// Constructeurs:
 	public BienImmobilier() {
 		super();

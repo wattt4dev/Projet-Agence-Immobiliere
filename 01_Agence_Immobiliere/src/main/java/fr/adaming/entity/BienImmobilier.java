@@ -3,6 +3,9 @@ package fr.adaming.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
 public class BienImmobilier {
 	
 	// Attributs:

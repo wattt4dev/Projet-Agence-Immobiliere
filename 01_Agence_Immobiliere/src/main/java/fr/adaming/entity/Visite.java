@@ -2,6 +2,9 @@ package fr.adaming.entity;
 
 import java.util.Date;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 public class Visite {
 
 	// Attributs:

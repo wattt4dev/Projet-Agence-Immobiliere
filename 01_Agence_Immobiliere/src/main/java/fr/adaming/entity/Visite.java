@@ -2,11 +2,20 @@ package fr.adaming.entity;
 
 import java.util.Date;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 public class Visite {
 
 	// Attributs:
 	private int idVisite;
 	private Date dateVisite;
+	
+	//Approche UML
+	//One BienImmobilier ToMany Visite
+	@ManyToOne
+	@JoinColumn(name="id_BienImmobilier", referencedColumnName="id_BienImmobilier")//côté porteur FK
+	private BienImmobilier bienImmobilier;
 
 	// Constructeurs:
 	public Visite() {

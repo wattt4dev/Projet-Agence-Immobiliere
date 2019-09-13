@@ -1,5 +1,13 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: IN-BR-002
+=======
+<<<<<<< HEAD
+Built-By: IN-BR-014
+=======
+Built-By: IN-BR-009
+>>>>>>> branch 'master' of https://github.com/wattt4dev/Projet-Agence-Immobiliere.git
+>>>>>>> branch 'master' of https://github.com/wattt4dev/Projet-Agence-Immobiliere.git
 Build-Jdk: 1.8.0_202
 Created-By: Maven Integration for Eclipse
 

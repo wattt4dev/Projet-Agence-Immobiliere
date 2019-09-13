@@ -3,10 +3,12 @@ package fr.adaming.entity;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-
-
+@Entity
+@Table(name="agent")
 public class Agent extends Personne {
 
 	// Attributs: 
@@ -15,7 +17,7 @@ public class Agent extends Personne {
 	// Approche UML
 	//One Agent to Many BienImmobiliers
 	@OneToMany(mappedBy="bienImmobilier", cascade = CascadeType.ALL)
-	private List<BienImmobilier> listeBiensImmobiliers;
+	private List<BienImmobilier> listeBiensImmobiliersAgent;
 
 	// Constructeurs:
 	public Agent() {

@@ -1,6 +1,10 @@
 package fr.adaming.entity;
 
 import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 
 public class BienImmobilier {
 	
@@ -12,6 +16,11 @@ public class BienImmobilier {
 	private Date dateDispoBienImmobilier;
 	private String revenuCadastralBienImmobilier;
 	private String paysBienImmobilier;
+	
+	//Approche UML
+	//One BienImmobilier ToMany Visite
+	@OneToMany(mappedBy="bienImmobilier", cascade = CascadeType.ALL)
+	private List<Visite> listeVisites;
 	
 	// Constructeurs:
 	public BienImmobilier() {

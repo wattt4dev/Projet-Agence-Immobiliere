@@ -1,10 +1,20 @@
 package fr.adaming.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
 public class Client extends Personne{
 	
 	// Attributs:
 	private boolean acquereur;
 	private String adresseClient;
+	
+	//Approche UML
+	//One Client to Many BienImmobilier
+	@OneToMany (mappedBy="client", cascade = CascadeType.ALL)
+	private List<BienImmobilier> listeBienImmobilierClient;
 	
 	// Constructeurs:
 	public Client() {

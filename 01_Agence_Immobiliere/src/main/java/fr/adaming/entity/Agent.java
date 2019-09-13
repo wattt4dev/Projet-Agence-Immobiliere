@@ -2,7 +2,7 @@ package fr.adaming.entity;
 
 public class Agent extends Personne {
 
-	// Attribut:
+	// Attributs:
 	private String mdpAgent;
 
 	// Constructeurs:

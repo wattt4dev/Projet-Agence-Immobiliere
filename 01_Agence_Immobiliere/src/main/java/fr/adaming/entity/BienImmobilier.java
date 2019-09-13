@@ -20,13 +20,20 @@ public class BienImmobilier {
 	private String paysBienImmobilier;
 	
 	//Approche UML
+	
 	//One BienImmobilier ToMany Visite
 	@OneToMany(mappedBy="bienImmobilier", cascade = CascadeType.ALL)
 	private List<Visite> listeVisites;
+	
 	//ManyBienImmobilier to One Agent
 	@ManyToOne
 	@JoinColumn(name="id_agent", referencedColumnName="id_agent")//côté porteur FK
 	private Agent agent;
+	
+	//ManyBienImmobilier to One Categorie
+	@ManyToOne
+	@JoinColumn(name="id_categorie", referencedColumnName="id_categorie")//côté porteur FK
+	private Categorie categorie;
 	
 	// Constructeurs:
 	public BienImmobilier() {

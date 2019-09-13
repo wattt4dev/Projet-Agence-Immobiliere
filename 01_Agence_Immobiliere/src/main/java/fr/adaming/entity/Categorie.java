@@ -1,5 +1,10 @@
 package fr.adaming.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
 public class Categorie {
 	
 	// Attributs:
@@ -8,6 +13,11 @@ public class Categorie {
 	private String modeCategorie;
 	private String superficieCategorie;
 	private int nombreDeChambresCategorie;
+	
+	//Approche UML
+	//one categorie to many bienImmobiliers
+	@OneToMany(mappedBy="categorie", cascade = CascadeType.ALL)
+	private List<BienImmobilier> listeBienImmobiliers;
 
 	// Constructeurs:
 	public Categorie() {

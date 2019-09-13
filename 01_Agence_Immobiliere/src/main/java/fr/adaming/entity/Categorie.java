@@ -17,7 +17,7 @@ public class Categorie {
 	//Approche UML
 	//one categorie to many bienImmobiliers
 	@OneToMany(mappedBy="categorie", cascade = CascadeType.ALL)
-	private List<BienImmobilier> listeBienImmobiliers;
+	private List<BienImmobilier> listeBienImmobiliersCategorie;
 
 	// Constructeurs:
 	public Categorie() {

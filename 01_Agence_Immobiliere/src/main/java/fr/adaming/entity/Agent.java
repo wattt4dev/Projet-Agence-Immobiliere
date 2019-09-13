@@ -1,9 +1,21 @@
 package fr.adaming.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
+
+
 public class Agent extends Personne {
 
 	// Attributs: 
 	private String mdpAgent;
+	
+	// Approche UML
+	//One Agent to Many BienImmobiliers
+	@OneToMany(mappedBy="bienImmobilier", cascade = CascadeType.ALL)
+	private List<BienImmobilier> listeBiensImmobiliers;
 
 	// Constructeurs:
 	public Agent() {

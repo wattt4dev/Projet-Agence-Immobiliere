@@ -1,8 +1,16 @@
 package fr.adaming.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Categorie {
 	
 	// Attributs:
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idCategorie;
 	private String typeCategorie;
 	private String modeCategorie;

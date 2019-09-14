@@ -6,15 +6,16 @@
 	<persistence-unit name="UP_01_Agence_Immobiliere"
 		transaction-type="RESOURCE_LOCAL">
 		<!-- Définition du provider Hibernate -->
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
 		<!-- Informations pour la connexion à la DataBase (propriétés JPA) -->
 		<properties>
 			<!-- Definition de la stratégie de génération des tables dans la DataBase -->
-			<property name="hibernate.hbm2ddl.auto"	value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQLDialect" />
 			<!-- Afficher les réquetes SQL dans la console -->
 			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.dialect" value="create"/>
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
 	</persistence-unit>
 </persistence>

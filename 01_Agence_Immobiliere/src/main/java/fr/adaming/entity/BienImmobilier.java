@@ -4,13 +4,23 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
+@Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class BienImmobilier {
 	
 	// Attributs:
+	@Id
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int idBienImmobilier;
 	private String statutBienImmobilier;
 	private Date dateSoumissionBienImmobilier;
@@ -24,8 +34,8 @@ public class BienImmobilier {
 	@OneToMany(mappedBy="bienImmobilier", cascade = CascadeType.ALL)
 	private List<Visite> listeVisites;
 	//ManyBienImmobilier to One Agent
-	@ManyToOne
-	@JoinColumn(name="id_agent", referencedColumnName="id_agent")//côté porteur FK
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="id_agent", referencedColumnName="idAgent")//côté porteur FK
 	private Agent agent;
 	
 	// Constructeurs:
@@ -114,6 +124,23 @@ public class BienImmobilier {
 	public void setPaysBienImmobilier(String paysBienImmobilier) {
 		this.paysBienImmobilier = paysBienImmobilier;
 	}
+
+//	public List<Visite> getListeVisites() {
+//		return listeVisites;
+//	}
+//
+//	public void setListeVisites(List<Visite> listeVisites) {
+//		this.listeVisites = listeVisites;
+//	}
+
+	public Agent getAgent() {
+		return agent;
+	}
+
+	public void setAgent(Agent agent) {
+		this.agent = agent;
+	}
+	
 	
 	
 

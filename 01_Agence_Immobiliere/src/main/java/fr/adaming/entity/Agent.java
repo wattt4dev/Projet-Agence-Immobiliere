@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -13,12 +14,12 @@ public class Agent extends Personne {
 
 	// Attributs: 
 	private String mdpAgent;
+	private int idAgent;
 	
-	// Approche UML
-	//One Agent to Many BienImmobiliers
-	@OneToMany(mappedBy="bienImmobilier", cascade = CascadeType.ALL)
-	private List<BienImmobilier> listeBiensImmobiliersAgent;
+	@OneToMany(mappedBy="agent", cascade = CascadeType.ALL)
+	private List<BienImmobilier> bienImmobiliers;
 
+	
 	// Constructeurs:
 	public Agent() {
 		super();
@@ -42,5 +43,6 @@ public class Agent extends Personne {
 	public void setMdpAgent(String mdpAgent) {
 		this.mdpAgent = mdpAgent;
 	}
+
 
 }

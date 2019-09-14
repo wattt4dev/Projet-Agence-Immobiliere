@@ -1,5 +1,8 @@
 package fr.adaming.entity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Client extends Personne{
 	
 	// Attributs:

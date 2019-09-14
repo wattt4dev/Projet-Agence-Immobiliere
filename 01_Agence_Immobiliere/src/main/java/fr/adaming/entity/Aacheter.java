@@ -2,6 +2,9 @@ package fr.adaming.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Aacheter extends BienImmobilier {
 
 	// Attributs:

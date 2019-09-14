@@ -2,19 +2,28 @@ package fr.adaming.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class Visite {
 
 	// Attributs:
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idVisite;
 	private Date dateVisite;
 	
 	//Approche UML
 	//One BienImmobilier ToMany Visite
-	@ManyToOne
-	@JoinColumn(name="id_BienImmobilier", referencedColumnName="id_BienImmobilier")//côté porteur FK
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="id_BienImmobilier", referencedColumnName="idBienImmobilier")//côté porteur FK
 	private BienImmobilier bienImmobilier;
 
 	// Constructeurs:
@@ -34,6 +43,14 @@ public class Visite {
 	}
 
 	// Getters et setters:
+	public BienImmobilier getBienImmobilier() {
+		return bienImmobilier;
+	}
+
+	public void setBienImmobilier(BienImmobilier bienImmobilier) {
+		this.bienImmobilier = bienImmobilier;
+	}
+	
 	public int getIdVisite() {
 		return idVisite;
 	}

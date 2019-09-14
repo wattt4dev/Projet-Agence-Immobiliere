@@ -14,6 +14,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class BienImmobilier {
@@ -42,17 +43,17 @@ public class BienImmobilier {
 	
 	//ManyBienImmobilier to One Categorie
 	@ManyToOne
-	@JoinColumn(name="id_categorie", referencedColumnName="id_categorie")//côté porteur FK
+	@JoinColumn(name="id_categorie", referencedColumnName="idCategorie")//côté porteur FK
 	private Categorie categorie;
 	
 	//ManyBienImmobilier to One Client
 	@ManyToOne
-	@JoinColumn(name="id_client", referencedColumnName="id_client")//côté porteur FK
+	@JoinColumn(name="id_client", referencedColumnName="idClient")//côté porteur FK
 	private Client client;
 	
 	//ManyBienImmobilier to One Proprietaire
 	@ManyToOne
-	@JoinColumn(name="id_proprietaire", referencedColumnName="id_proprietaire")//côté porteur FK
+	@JoinColumn(name="id_proprietaire", referencedColumnName="idProprietaire")//côté porteur FK
 	private Proprietaire proprietaire;
 	
 	// Constructeurs:
@@ -137,18 +138,44 @@ public class BienImmobilier {
 	public String getPaysBienImmobilier() {
 		return paysBienImmobilier;
 	}
+	
+	
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	public Proprietaire getProprietaire() {
+		return proprietaire;
+	}
+
+	public void setProprietaire(Proprietaire proprietaire) {
+		this.proprietaire = proprietaire;
+	}
 
 	public void setPaysBienImmobilier(String paysBienImmobilier) {
 		this.paysBienImmobilier = paysBienImmobilier;
 	}
 
-//	public List<Visite> getListeVisites() {
-//		return listeVisites;
-//	}
-//
-//	public void setListeVisites(List<Visite> listeVisites) {
-//		this.listeVisites = listeVisites;
-//	}
+	public List<Visite> getListeVisites() {
+		return listeVisites;
+	}
+
+	public void setListeVisites(List<Visite> listeVisites) {
+		this.listeVisites = listeVisites;
+	}
 
 	public Agent getAgent() {
 		return agent;

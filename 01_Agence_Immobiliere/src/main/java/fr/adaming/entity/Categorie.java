@@ -1,19 +1,15 @@
 package fr.adaming.entity;
-
-<<<<<<< HEAD
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-=======
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 
->>>>>>> branch 'master' of https://github.com/wattt4dev/Projet-Agence-Immobiliere
+@Entity
 public class Categorie {
 	
 	// Attributs:
@@ -85,5 +81,14 @@ public class Categorie {
 	public void setNombreDeChambresCategorie(int nombreDeChambresCategorie) {
 		this.nombreDeChambresCategorie = nombreDeChambresCategorie;
 	}
+
+	public List<BienImmobilier> getListeBienImmobiliersCategorie() {
+		return listeBienImmobiliersCategorie;
+	}
+
+	public void setListeBienImmobiliersCategorie(List<BienImmobilier> listeBienImmobiliersCategorie) {
+		this.listeBienImmobiliersCategorie = listeBienImmobiliersCategorie;
+	}
+	
 	
 }

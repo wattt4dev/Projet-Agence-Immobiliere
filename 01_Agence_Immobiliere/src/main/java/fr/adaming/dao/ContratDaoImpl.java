@@ -5,11 +5,16 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
 
 import fr.adaming.entity.Agent;
 import fr.adaming.entity.Contrat;
 
+@Repository
 public class ContratDaoImpl implements IContratDao{
+	
 
 	@Override
 	public Contrat addContrat(Contrat c, Agent a) {
@@ -23,19 +28,18 @@ public class ContratDaoImpl implements IContratDao{
 //		return c;
 		
 		// 2. Deuxième méthode: requête JPQL
-//		EntityManager em = Persistence.createEntityManagerFactory("10_Agence_Immobiliere").createEntityManager();
-//		EntityTransaction transaction = em.getTransaction();
-//		transaction.begin();
-//		em.createNativeQuery("INSERT INTO contrat (idContrat, prixContrat, dateTransactionContrat) VALUES (?,?,?)")
-//		.setParameter(1, c.getIdContrat())
-//	    .setParameter(2, c.getPrixContrat())
-//	    .setParameter(3, c.getDateTransactionContrat())
-//	    .executeUpdate();
-//		transaction.commit();
-//		return c;
+		EntityManager em = Persistence.createEntityManagerFactory("10_Agence_Immobiliere").createEntityManager();
+		EntityTransaction transaction = em.getTransaction();
+		transaction.begin();
+		Query query = em.createNativeQuery("INSERT INTO contrat (idContrat, prixContrat, dateTransactionContrat) VALUES (?,?,?)");
+		query.setParameter(1, c.getIdContrat());
+	    query.setParameter(2, c.getPrixContrat());
+	    query.setParameter(3, c.getDateTransactionContrat());
+	    query.executeUpdate();
+		transaction.commit();
+		return c;
 		
 		// Pour cette méthode il faudrait INSERT le la FK de agent avec peut-être?
-		return null;
 	}
 
 	@Override

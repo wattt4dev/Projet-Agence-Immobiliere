@@ -1,21 +1,18 @@
 package fr.adaming.entity;
 
-<<<<<<< HEAD
 import javax.persistence.Entity;
-
-@Entity
-=======
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 
->>>>>>> branch 'master' of https://github.com/wattt4dev/Projet-Agence-Immobiliere
+@Entity
 public class Client extends Personne{
 	
 	// Attributs:
 	private boolean acquereur;
 	private String adresseClient;
+	private int idClient;
 	
 	//Approche UML
 	//One Client to Many BienImmobilier
@@ -55,5 +52,22 @@ public class Client extends Personne{
 	public void setAdresseClient(String adresseClient) {
 		this.adresseClient = adresseClient;
 	}
+
+	public int getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
+	}
+
+	public List<BienImmobilier> getListeBienImmobilierClient() {
+		return listeBienImmobilierClient;
+	}
+
+	public void setListeBienImmobilierClient(List<BienImmobilier> listeBienImmobilierClient) {
+		this.listeBienImmobilierClient = listeBienImmobilierClient;
+	}
+
 	
 }

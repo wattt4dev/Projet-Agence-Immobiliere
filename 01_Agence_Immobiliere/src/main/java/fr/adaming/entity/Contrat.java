@@ -15,19 +15,19 @@ public class Contrat {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idContrat;
 	private double prixContrat;
-	private Date dateTransactionContrat;
+	private String dateTransactionContrat;
 	
 	// Constructeurs:
 	public Contrat() {
 		super();
 	}
 
-	public Contrat(double prixContrat, Date dateTransactionContrat) {
+	public Contrat(double prixContrat, String dateTransactionContrat) {
 		super();
 		this.prixContrat = prixContrat;
 		this.dateTransactionContrat = dateTransactionContrat;
 	}
-	public Contrat(int idContrat, double prixContrat, Date dateTransactionContrat) {
+	public Contrat(int idContrat, double prixContrat, String dateTransactionContrat) {
 		super();
 		this.idContrat = idContrat;
 		this.prixContrat = prixContrat;
@@ -51,11 +51,11 @@ public class Contrat {
 		this.prixContrat = prixContrat;
 	}
 
-	public Date getDateTransactionContrat() {
+	public String getDateTransactionContrat() {
 		return dateTransactionContrat;
 	}
 
-	public void setDateTransactionContrat(Date dateTransactionContrat) {
+	public void setDateTransactionContrat(String dateTransactionContrat) {
 		this.dateTransactionContrat = dateTransactionContrat;
 	}
 

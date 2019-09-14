@@ -1,11 +1,19 @@
 package fr.adaming.entity;
 
+<<<<<<< HEAD
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+=======
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
+>>>>>>> branch 'master' of https://github.com/wattt4dev/Projet-Agence-Immobiliere
 public class Categorie {
 	
 	// Attributs:
@@ -16,6 +24,11 @@ public class Categorie {
 	private String modeCategorie;
 	private String superficieCategorie;
 	private int nombreDeChambresCategorie;
+	
+	//Approche UML
+	//one categorie to many bienImmobiliers
+	@OneToMany(mappedBy="categorie", cascade = CascadeType.ALL)
+	private List<BienImmobilier> listeBienImmobiliersCategorie;
 
 	// Constructeurs:
 	public Categorie() {

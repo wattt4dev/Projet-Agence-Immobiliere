@@ -1,13 +1,26 @@
 package fr.adaming.entity;
 
+<<<<<<< HEAD
 import javax.persistence.Entity;
 
 @Entity
+=======
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
+>>>>>>> branch 'master' of https://github.com/wattt4dev/Projet-Agence-Immobiliere
 public class Client extends Personne{
 	
 	// Attributs:
 	private boolean acquereur;
 	private String adresseClient;
+	
+	//Approche UML
+	//One Client to Many BienImmobilier
+	@OneToMany (mappedBy="client", cascade = CascadeType.ALL)
+	private List<BienImmobilier> listeBienImmobilierClient;
 	
 	// Constructeurs:
 	public Client() {

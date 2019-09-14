@@ -30,13 +30,30 @@ public class BienImmobilier {
 	private String paysBienImmobilier;
 	
 	//Approche UML
+	
 	//One BienImmobilier ToMany Visite
 	@OneToMany(mappedBy="bienImmobilier", cascade = CascadeType.ALL)
 	private List<Visite> listeVisites;
+	
 	//ManyBienImmobilier to One Agent
 	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="id_agent", referencedColumnName="idAgent")//côté porteur FK
 	private Agent agent;
+	
+	//ManyBienImmobilier to One Categorie
+	@ManyToOne
+	@JoinColumn(name="id_categorie", referencedColumnName="id_categorie")//côté porteur FK
+	private Categorie categorie;
+	
+	//ManyBienImmobilier to One Client
+	@ManyToOne
+	@JoinColumn(name="id_client", referencedColumnName="id_client")//côté porteur FK
+	private Client client;
+	
+	//ManyBienImmobilier to One Proprietaire
+	@ManyToOne
+	@JoinColumn(name="id_proprietaire", referencedColumnName="id_proprietaire")//côté porteur FK
+	private Proprietaire proprietaire;
 	
 	// Constructeurs:
 	public BienImmobilier() {

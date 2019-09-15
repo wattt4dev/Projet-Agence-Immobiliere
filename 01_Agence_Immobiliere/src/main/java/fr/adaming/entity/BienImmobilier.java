@@ -14,6 +14,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
@@ -55,6 +56,10 @@ public class BienImmobilier {
 	@ManyToOne
 	@JoinColumn(name="id_proprietaire", referencedColumnName="idProprietaire")//côté porteur FK
 	private Proprietaire proprietaire;
+	
+	//OneBienImmobilier To One Contrat
+	@OneToOne(mappedBy="bienImmobilier", cascade=CascadeType.ALL)
+	private Contrat contrat;
 	
 	// Constructeurs:
 	public BienImmobilier() {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="UP_01_Agence_Immobiliere"
+		transaction-type="RESOURCE_LOCAL">
+		<!-- Définition du provider Hibernate -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<!-- Informations pour la connexion à la DataBase (propriétés JPA) -->
+		<properties>
+			<!-- Definition de la stratégie de génération des tables dans la DataBase -->
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQLDialect" />
+			<!-- Afficher les réquetes SQL dans la console -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+</persistence>

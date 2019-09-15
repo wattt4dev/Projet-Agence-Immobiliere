@@ -7,6 +7,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import fr.adaming.entity.Agent;
@@ -14,12 +15,14 @@ import fr.adaming.entity.Contrat;
 
 @Repository
 public class ContratDaoImpl implements IContratDao{
-	
+
+	private EntityManager em = Persistence.createEntityManagerFactory("UP_01_Agence_Immobiliere").createEntityManager();
+
 
 	@Override
 	public Contrat addContrat(Contrat c, Agent a) {
 		// 1. Première méthode: "persist"
-//		EntityManager em = Persistence.createEntityManagerFactory("10_Agence_Immobiliere").createEntityManager();
+//		EntityManager em = Persistence.createEntityManagerFactory("01_Agence_Immobiliere").createEntityManager();
 //		EntityTransaction transaction = em.getTransaction();
 //		transaction.begin();
 //		c.setAgent(a);
@@ -28,7 +31,6 @@ public class ContratDaoImpl implements IContratDao{
 //		return c;
 		
 		// 2. Deuxième méthode: requête JPQL
-		EntityManager em = Persistence.createEntityManagerFactory("10_Agence_Immobiliere").createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		Query query = em.createNativeQuery("INSERT INTO contrat (idContrat, prixContrat, dateTransactionContrat) VALUES (?,?,?)");
@@ -56,8 +58,9 @@ public class ContratDaoImpl implements IContratDao{
 
 	@Override
 	public List<Contrat> getAllContrat(Agent a) {
-		// TODO Auto-generated method stub
-		return null;
+		//Utilisation de JPQL
+		em.getTransaction().begin();
+		return em.createQuery("SELECT * FROM Contrat contrat", Contrat.class).getResultList();
 	}
 
 	@Override

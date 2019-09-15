@@ -8,9 +8,12 @@ C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IVisiteDao.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Client.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IProprietaireDao.java
+C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\AgentServiceImpl.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IClientDao.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Agent.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\BienImmobilier.java
+C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IAgentService.java
+C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\AgentDaoImpl.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IContratDao.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IAcheterDao.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IAgentDao.java

@@ -1,11 +1,14 @@
+fr\adaming\service\IAgentService.class
 fr\adaming\entity\BienImmobilier.class
 fr\adaming\dao\ContratDaoImpl.class
 fr\adaming\entity\Proprietaire.class
+fr\adaming\dao\AgentDaoImpl.class
 fr\adaming\entity\Categorie.class
 fr\adaming\entity\Client.class
 fr\adaming\dao\IContratDao.class
 fr\adaming\dao\IProprietaireDao.class
 fr\adaming\entity\Contrat.class
+fr\adaming\service\AgentServiceImpl.class
 fr\adaming\dao\IAlouerDao.class
 fr\adaming\entity\Agent.class
 fr\adaming\entity\Visite.class

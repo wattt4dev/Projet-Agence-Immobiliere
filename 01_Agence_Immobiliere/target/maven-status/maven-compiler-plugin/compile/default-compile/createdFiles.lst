@@ -1,7 +1,6 @@
 fr\adaming\entity\BienImmobilier.class
 fr\adaming\dao\ContratDaoImpl.class
 fr\adaming\entity\Proprietaire.class
-fr\adaming\service\IContratService.class
 fr\adaming\entity\Categorie.class
 fr\adaming\entity\Client.class
 fr\adaming\dao\IContratDao.class
@@ -11,11 +10,9 @@ fr\adaming\dao\IAlouerDao.class
 fr\adaming\entity\Agent.class
 fr\adaming\entity\Visite.class
 fr\adaming\entity\Aacheter.class
-fr\adaming\rest\ContratRestController.class
 fr\adaming\dao\IAgentDao.class
 fr\adaming\dao\IClientDao.class
 fr\adaming\entity\Personne.class
-fr\adaming\service\ContratServiceImpl.class
 fr\adaming\dao\IVisiteDao.class
 fr\adaming\entity\Alouer.class
 fr\adaming\dao\ICategorieDao.class

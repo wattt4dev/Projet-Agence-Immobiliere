@@ -22,17 +22,17 @@ public class ContratDaoImpl implements IContratDao {
 
 	@Override
 	public Contrat addContrat(Contrat c, Agent a) {
-		// 1. Première méthode: "persist"
-		// EntityManager em =
-		// Persistence.createEntityManagerFactory("01_Agence_Immobiliere").createEntityManager();
-		// EntityTransaction transaction = em.getTransaction();
-		// transaction.begin();
-		// c.setAgent(a);
-		// em.persist(c);
-		// transaction.commit();
-		// return c;
-
-		// 2. Deuxième méthode: requête JPQL
+//		// 1. Première méthode: "persist"
+//		// EntityManager em =
+//		// Persistence.createEntityManagerFactory("01_Agence_Immobiliere").createEntityManager();
+//		// EntityTransaction transaction = em.getTransaction();
+//		// transaction.begin();
+//		// c.setAgent(a);
+//		// em.persist(c);
+//		// transaction.commit();
+//		// return c;
+//
+//		// 2. Deuxième méthode: requête JPQL
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		Query query = em.createNativeQuery(
@@ -40,7 +40,7 @@ public class ContratDaoImpl implements IContratDao {
 		query.setParameter(1, c.getIdContrat());
 		query.setParameter(2, c.getPrixContrat());
 		query.setParameter(3, c.getDateTransactionContrat());
-		query.setParameter(4, c.getBienImmobilier()); // Ici p-e rajouter un getIdBienImmobilier?
+		query.setParameter(4, c.getBienImmobilier().getIdBienImmobilier()); // Ici p-e rajouter un getIdBienImmobilier?
 		query.executeUpdate();
 		transaction.commit();
 		return c;
@@ -50,6 +50,7 @@ public class ContratDaoImpl implements IContratDao {
 		// JPA je sais plus, enfin quand on testera si ça marche pas éventuellement
 		// regarder
 		// si c'est pas juste pcq j'ai pas appelé les bonnes colonnes
+		//return null;
 	}
 
 	@Override

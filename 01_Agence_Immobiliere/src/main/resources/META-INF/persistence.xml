@@ -5,6 +5,17 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
 		transaction-type="RESOURCE_LOCAL">
 		<!-- Définition du provider Hibernate -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>fr.adaming.entity.Aacheter</class>
+		<class>fr.adaming.entity.Agent</class>
+		<class>fr.adaming.entity.Alouer</class>
+		<class>fr.adaming.entity.BienImmobilier</class>
+		<class>fr.adaming.entity.Categorie</class>
+		<class>fr.adaming.entity.Client</class>
+		<class>fr.adaming.entity.Contrat</class>
+		<class>fr.adaming.entity.Personne</class>
+		<class>fr.adaming.entity.Proprietaire</class>
+		<class>fr.adaming.entity.Visite</class>
 
 		<!-- Informations pour la connexion à la DataBase (propriétés JPA) -->
 		<properties>

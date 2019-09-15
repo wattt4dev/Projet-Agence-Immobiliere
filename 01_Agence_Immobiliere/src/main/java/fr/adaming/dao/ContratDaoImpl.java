@@ -3,8 +3,10 @@ package fr.adaming.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
@@ -15,7 +17,8 @@ import fr.adaming.entity.Contrat;
 @Repository
 public class ContratDaoImpl implements IContratDao {
 
-	private EntityManager em = Persistence.createEntityManagerFactory("UP_01_Agence_Immobiliere").createEntityManager();
+	@PersistenceContext
+	private EntityManager em;
 
 	@Override
 	public Contrat addContrat(Contrat c, Agent a) {
@@ -77,7 +80,8 @@ public class ContratDaoImpl implements IContratDao {
 	@Override
 	public void updateContrat(Contrat c, Agent a) {
 		// Récup d'une transaction:
-		em.getTransaction().begin();
+		EntityTransaction entityTransaction = em.getTransaction();
+		entityTransaction.begin();
 
 		// String requête:
 		String requeteMAJ = "UPDATE Contrat contrat SET contrat.prixContrat=:pPrixContrat , contrat.dateTransactionContrat=:pDateTransactionContrat WHERE contrat.idContrat=:pIdContrat";
@@ -94,18 +98,16 @@ public class ContratDaoImpl implements IContratDao {
 		updateQuery.executeUpdate();
 
 		// Validation de la tx:
-		em.getTransaction().commit();
+		entityTransaction.commit();
 
 		// Eventuellement rajouter dans la requête la modif du bien immobilier associé?
 	}
 
 	@Override
 	public List<Contrat> getAllContrat(Agent a) {
-		// Utilisation de JPQL
-		em.getTransaction().begin(); // em.getTransaction().commit(); à rajouter non? P-e décomposer la requête en
-										// crééant une liste pour stocker les données, faire le commit et du coup return
-										// la liste après? (cf: workspace 4 projet 4 "SelectionDonneesJPQLJava")
-		return em.createQuery("SELECT * FROM Contrat contrat", Contrat.class).getResultList();
+		Query query = em.createQuery("FROM Contrat c");
+		List<Contrat> contrats = query.getResultList();
+		return contrats;
 
 	}
 

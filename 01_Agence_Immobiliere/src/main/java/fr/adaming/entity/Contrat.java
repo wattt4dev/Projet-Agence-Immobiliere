@@ -13,19 +13,19 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Contrat {
-	
+
 	// Attributs:
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idContrat;
 	private double prixContrat;
 	private String dateTransactionContrat;
-	
-	//Relation UML
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinColumn(name="id_BienImmobilier", referencedColumnName="idBienImmobilier")
+
+	// Relation UML
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_BienImmobilier", referencedColumnName = "idBienImmobilier")
 	private BienImmobilier bienImmobilier;
-	
+
 	// Constructeurs:
 	public Contrat() {
 		super();
@@ -36,6 +36,7 @@ public class Contrat {
 		this.prixContrat = prixContrat;
 		this.dateTransactionContrat = dateTransactionContrat;
 	}
+
 	public Contrat(int idContrat, double prixContrat, String dateTransactionContrat) {
 		super();
 		this.idContrat = idContrat;
@@ -68,8 +69,12 @@ public class Contrat {
 		this.dateTransactionContrat = dateTransactionContrat;
 	}
 
-	
-	
-	
+	public BienImmobilier getBienImmobilier() {
+		return bienImmobilier;
+	}
+
+	public void setBienImmobilier(BienImmobilier bienImmobilier) {
+		this.bienImmobilier = bienImmobilier;
+	}
 
 }

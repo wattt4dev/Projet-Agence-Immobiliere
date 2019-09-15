@@ -7,66 +7,116 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import fr.adaming.entity.Agent;
 import fr.adaming.entity.Contrat;
 
 @Repository
-public class ContratDaoImpl implements IContratDao{
+public class ContratDaoImpl implements IContratDao {
 
 	private EntityManager em = Persistence.createEntityManagerFactory("UP_01_Agence_Immobiliere").createEntityManager();
-
 
 	@Override
 	public Contrat addContrat(Contrat c, Agent a) {
 		// 1. Première méthode: "persist"
-//		EntityManager em = Persistence.createEntityManagerFactory("01_Agence_Immobiliere").createEntityManager();
-//		EntityTransaction transaction = em.getTransaction();
-//		transaction.begin();
-//		c.setAgent(a);
-//		em.persist(c);
-//		transaction.commit();
-//		return c;
-		
+		// EntityManager em =
+		// Persistence.createEntityManagerFactory("01_Agence_Immobiliere").createEntityManager();
+		// EntityTransaction transaction = em.getTransaction();
+		// transaction.begin();
+		// c.setAgent(a);
+		// em.persist(c);
+		// transaction.commit();
+		// return c;
+
 		// 2. Deuxième méthode: requête JPQL
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
-		Query query = em.createNativeQuery("INSERT INTO contrat (idContrat, prixContrat, dateTransactionContrat) VALUES (?,?,?)");
+		Query query = em.createNativeQuery(
+				"INSERT INTO Contrat (idContrat, prixContrat, dateTransactionContrat, idBienImmobilier) VALUES (?,?,?,?)");
 		query.setParameter(1, c.getIdContrat());
-	    query.setParameter(2, c.getPrixContrat());
-	    query.setParameter(3, c.getDateTransactionContrat());
-	    query.executeUpdate();
+		query.setParameter(2, c.getPrixContrat());
+		query.setParameter(3, c.getDateTransactionContrat());
+		query.setParameter(4, c.getBienImmobilier()); // Ici p-e rajouter un getIdBienImmobilier?
+		query.executeUpdate();
 		transaction.commit();
 		return c;
-		
-		// Pour cette méthode il faudrait INSERT le la FK de agent avec peut-être?
+
+		// A voir si les "idContrat" etc correspondent bien à ce qu'il faut mettre dans
+		// la requête, il me semble qu'avec hibernate on parle aux entités mais du coup
+		// JPA je sais plus, enfin quand on testera si ça marche pas éventuellement
+		// regarder
+		// si c'est pas juste pcq j'ai pas appelé les bonnes colonnes
 	}
 
 	@Override
 	public void deleteContrat(int idContrat, Agent a) {
-		// TODO Auto-generated method stub
-		
+
+		// Récup d'une transaction:
+		em.getTransaction().begin();
+
+		// String requête:
+		String requeteDelete = "DELETE FROM Contrat contrat WHERE contrat.idContrat=:pIdContrat"; // and
+																									// contrat.idAgent=???
+																									// je ne sais pas
+																									// comment faire là
+
+		// Construction de la requête via l'EM:
+		Query deleteQuery = em.createQuery(requeteDelete);
+
+		// Passage de params:
+		deleteQuery.setParameter("pIdContrat", idContrat);
+
+		// Execution de la requête:
+		deleteQuery.executeUpdate();
+
+		// Validation de la tx:
+		em.getTransaction().commit();
 	}
 
 	@Override
 	public void updateContrat(Contrat c, Agent a) {
-		// TODO Auto-generated method stub
-		
+		// Récup d'une transaction:
+		em.getTransaction().begin();
+
+		// String requête:
+		String requeteMAJ = "UPDATE Contrat contrat SET contrat.prixContrat=:pPrixContrat , contrat.dateTransactionContrat=:pDateTransactionContrat WHERE contrat.idContrat=:pIdContrat";
+
+		// Construction de la requête via l'EM:
+		Query updateQuery = em.createQuery(requeteMAJ);
+
+		// Passage de params:
+		updateQuery.setParameter("pPrixContrat", c.getPrixContrat());
+		updateQuery.setParameter("pDateTransactionContrat", c.getDateTransactionContrat());
+		updateQuery.setParameter("pIdContrat", c.getIdContrat());
+
+		// Execution de la requête:
+		updateQuery.executeUpdate();
+
+		// Validation de la tx:
+		em.getTransaction().commit();
+
+		// Eventuellement rajouter dans la requête la modif du bien immobilier associé?
 	}
 
 	@Override
 	public List<Contrat> getAllContrat(Agent a) {
-		//Utilisation de JPQL
-		em.getTransaction().begin();
+		// Utilisation de JPQL
+		em.getTransaction().begin(); // em.getTransaction().commit(); à rajouter non? P-e décomposer la requête en
+										// crééant une liste pour stocker les données, faire le commit et du coup return
+										// la liste après? (cf: workspace 4 projet 4 "SelectionDonneesJPQLJava")
 		return em.createQuery("SELECT * FROM Contrat contrat", Contrat.class).getResultList();
+
 	}
 
 	@Override
 	public Contrat getContratById(int idContrat, Agent a) {
-		// TODO Auto-generated method stub
-		return null;
+		em.getTransaction().begin();
+		String getByIdRequete = "SELECT contrat FROM Contrat contrat WHERE contrat.idContrat = :pIdContrat";
+		Query getByIdJpqlReq = em.createQuery(getByIdRequete);
+		getByIdJpqlReq.setParameter("pIdContrat", idContrat);
+		Contrat contratById = (Contrat) getByIdJpqlReq.getSingleResult();
+		return contratById;
 	}
 
 }

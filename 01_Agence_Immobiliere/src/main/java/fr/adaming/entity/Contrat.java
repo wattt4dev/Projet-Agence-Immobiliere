@@ -2,10 +2,14 @@ package fr.adaming.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Contrat {
@@ -16,6 +20,11 @@ public class Contrat {
 	private int idContrat;
 	private double prixContrat;
 	private String dateTransactionContrat;
+	
+	//Relation UML
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="id_BienImmobilier", referencedColumnName="idBienImmobilier")
+	private BienImmobilier bienImmobilier;
 	
 	// Constructeurs:
 	public Contrat() {

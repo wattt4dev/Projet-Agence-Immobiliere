@@ -3,8 +3,10 @@ package fr.adaming.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="aAcheter")
 public class Aacheter extends BienImmobilier {
 
 	// Attributs:

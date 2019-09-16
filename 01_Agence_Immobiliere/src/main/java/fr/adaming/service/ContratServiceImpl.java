@@ -17,13 +17,13 @@ public class ContratServiceImpl implements IContratService{
 	IContratDao contratDao;
 
 	@Override
-	public Contrat addContratService(Contrat c) {
-		return contratDao.addContrat(c);
+	public void addContratService(Contrat c) {
+		contratDao.addContrat(c);
 	}
 
 	@Override
 	public void deleteContratService(int idContrat) {
-		// TODO Auto-generated method stub
+		contratDao.deleteContrat(idContrat);
 	}
 
 	@Override
@@ -39,8 +39,7 @@ public class ContratServiceImpl implements IContratService{
 
 	@Override
 	public Contrat getContratByIdService(int idContrat) {
-		// TODO Auto-generated method stub
-		return null;
+		return contratDao.getContratById(idContrat);
 	}
 
 }

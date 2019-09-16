@@ -21,34 +21,16 @@ public class ContratDaoImpl implements IContratDao {
 
 	@Transactional
 	@Override
-	public Contrat addContrat(Contrat c) {
+	public void addContrat(Contrat c) {
 		em.persist(c);
-		return c;
 	}
 
+	@Transactional
 	@Override
 	public void deleteContrat(int idContrat) {
-
-		// Récup d'une transaction:
-		em.getTransaction().begin();
-
-		// String requête:
-		String requeteDelete = "DELETE FROM Contrat contrat WHERE contrat.idContrat=:pIdContrat"; // and
-																									// contrat.idAgent=???
-																									// je ne sais pas
-																									// comment faire là
-
-		// Construction de la requête via l'EM:
-		Query deleteQuery = em.createQuery(requeteDelete);
-
-		// Passage de params:
+		Query deleteQuery = em.createQuery("DELETE FROM Contrat c WHERE c.idContrat= :pIdContrat");
 		deleteQuery.setParameter("pIdContrat", idContrat);
-
-		// Execution de la requête:
 		deleteQuery.executeUpdate();
-
-		// Validation de la tx:
-		em.getTransaction().commit();
 	}
 
 	@Override
@@ -76,7 +58,7 @@ public class ContratDaoImpl implements IContratDao {
 
 		// Eventuellement rajouter dans la requête la modif du bien immobilier associé?
 	}
-
+	@Transactional
 	@Override
 	public List<Contrat> getAllContrat() {
 		Query query = em.createQuery("FROM Contrat c");
@@ -85,14 +67,13 @@ public class ContratDaoImpl implements IContratDao {
 
 	}
 
+	@Transactional
 	@Override
 	public Contrat getContratById(int idContrat) {
-		em.getTransaction().begin();
-		String getByIdRequete = "SELECT contrat FROM Contrat contrat WHERE contrat.idContrat = :pIdContrat";
-		Query getByIdJpqlReq = em.createQuery(getByIdRequete);
-		getByIdJpqlReq.setParameter("pIdContrat", idContrat);
-		Contrat contratById = (Contrat) getByIdJpqlReq.getSingleResult();
-		return contratById;
+		Query query = em.createQuery("FROM Contrat c WHERE c.idContrat= :pIdContrat");
+		query.setParameter("pIdContrat", idContrat);
+		Contrat contrat = (Contrat) query.getSingleResult();
+		return contrat;
 	}
 
 }

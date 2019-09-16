@@ -7,7 +7,7 @@ import fr.adaming.entity.Contrat;
 
 public interface IContratService {
 	
-	public Contrat addContratService(Contrat c);
+	public void addContratService(Contrat c);
 	public void deleteContratService(int idContrat);
 	public void updateContratService(Contrat c);
 	public List<Contrat> getAllContratService();

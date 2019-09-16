@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import fr.adaming.entity.Visite;
 import fr.adaming.service.IVisiteService;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/applicationContext.xml"})
-
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/applicationContext.xml"})
 public class VisiteDaoImplTest {
 	
-	@Autowired
-	IVisiteService vService;
+//	@Autowired
+//	IVisiteService vService;
 	
 //	@Test
 //	public void testGetAllVisite() {
@@ -71,15 +71,16 @@ public class VisiteDaoImplTest {
 //		//assertEquals(date, dateExpected);
 //	}
 	
-	@Test
-	public void testGetByIdVisite() {
-		
-		Visite v = new Visite();
-		int idVisite=1;
-		Visite v1 = vService.getVisiteById(idVisite);
-		v1.setDateVisite("Demain");
-		vService.updateVisite(v1);
-
-	}
+//	@Test
+//	@Ignore
+//	public void testGetByIdVisite() {
+//		
+//		Visite v = new Visite();
+//		int idVisite=1;
+//		Visite v1 = vService.getVisiteById(idVisite);
+//		v1.setDateVisite("Demain");
+//		vService.updateVisite(v1);
+//
+//	}
 
 }

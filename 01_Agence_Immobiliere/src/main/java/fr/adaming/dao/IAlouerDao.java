@@ -7,10 +7,10 @@ import fr.adaming.entity.Alouer;
 
 public interface IAlouerDao {
 	
-	public Alouer addAlouer(Alouer l, Agent a);
-	public void deleteAlouer(int idCategorie, Agent a);
-	public void updateAlouer(Alouer l, Agent a);
-	public List<Alouer> getAllAlouer(Agent a);
-	public Alouer getAlouerById(int idCategorie, Agent a);
+	public void addAlouer(Alouer aLouer);
+	public void deleteAlouer(int idBienImmobilier);
+	public void updateAlouer(Alouer al);
+	public List<Alouer> getAllAlouer();
+	public Alouer getAlouerById(int idBienImmobilier);
 
 }

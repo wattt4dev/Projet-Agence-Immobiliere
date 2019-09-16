@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="agent")
-public class Agent extends Personne {
+public class Agent extends Personne  {
 
 	// Attributs: 
 	private String mdpAgent;
@@ -25,9 +25,10 @@ public class Agent extends Personne {
 		super();
 	}
 
-	public Agent(String nomPersonne, String telephonePrive, String mdpAgent) {
+	public Agent(String nomPersonne, String telephonePrive, String mdpAgent, int idAgent) {
 		super(nomPersonne, telephonePrive);
 		this.mdpAgent = mdpAgent;
+		this.idAgent = idAgent;
 	}
 	
 	public Agent(int idPersonne, String nomPersonne, String telephonePrive, String mdpAgent) {
@@ -43,6 +44,16 @@ public class Agent extends Personne {
 	public void setMdpAgent(String mdpAgent) {
 		this.mdpAgent = mdpAgent;
 	}
+
+	public int getIdAgent() {
+		return idAgent;
+	}
+
+	public void setIdAgent(int idAgent) {
+		this.idAgent = idAgent;
+	}
+	
+	
 
 
 }

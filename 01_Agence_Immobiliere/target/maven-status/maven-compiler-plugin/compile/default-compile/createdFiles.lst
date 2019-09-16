@@ -28,6 +28,7 @@ fr\adaming\dao\IAAcheterDao.class
 fr\adaming\dao\IProprietaireDao.class
 fr\adaming\dao\IAgentDao.class
 fr\adaming\dao\AAcheterDaoImpl.class
+fr\adaming\rest\VisiteRestController.class
 fr\adaming\dao\ICategorieDao.class
 fr\adaming\service\ClientServiceImpl.class
 fr\adaming\entity\BienImmobilier.class

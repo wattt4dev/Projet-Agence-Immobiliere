@@ -44,9 +44,14 @@ public class CategorieRestController {
 		categorieService.deleteCategorie(id);
 	}
 	
-	@RequestMapping(value="/getCategorie", method=RequestMethod.DELETE)
+	@RequestMapping(value="/getCategorie", method=RequestMethod.GET, produces="application/json" )
 	public Categorie getCategorieById(@RequestParam("pId") int id) {
 		return categorieService.getCategorieById(id);
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.PUT, consumes="application/json")
+	public void updateCategorie(@RequestParam("pId") int id) {
+		categorieService.getCategorieById(id);
 	}
 
 }

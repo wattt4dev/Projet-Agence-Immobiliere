@@ -39,6 +39,14 @@ public class CategorieDaoImpl implements ICategorieDao{
 	@Override
 	public void updateCategorie(Categorie c) {
 
+		Query updateQuery = em.createQuery("UPDATE Categorie c SET c.typeCategorie = :pTypeCategorie , c.modeCategorie = :pModeCategorie , c.superficieCategorie = :pSuperficieCategorie, c.nombreDeChambresCategorie = :pNombreDeChambresCategorie WHERE c.idCategorie= :pidCategorie");
+		// Passage des params
+		updateQuery.setParameter("pTypeCategorie", c.getTypeCategorie());
+		updateQuery.setParameter("pModeCategorie", c.getModeCategorie());
+		updateQuery.setParameter("pSuperficieCategorie", c.getSuperficieCategorie());
+		updateQuery.setParameter("pNombreDeChambresCategorie", c.getNombreDeChambresCategorie());
+		updateQuery.setParameter("pIdCategorie", c.getIdCategorie());
+		updateQuery.executeUpdate();
 	}
 
 	@Override

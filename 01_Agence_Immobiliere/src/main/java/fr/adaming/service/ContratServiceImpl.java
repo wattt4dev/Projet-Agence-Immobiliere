@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.dao.ContratDaoImpl;
+import fr.adaming.dao.IContratDao;
 import fr.adaming.entity.Agent;
 import fr.adaming.entity.Contrat;
 
@@ -14,34 +14,31 @@ import fr.adaming.entity.Contrat;
 public class ContratServiceImpl implements IContratService{
 	
 	@Autowired
-	private ContratDaoImpl contratDao;
+	IContratDao contratDao;
 
 	@Override
-	public Contrat addContratService(Contrat c, Agent a) {
-		return contratDao.addContrat(c, a);
+	public void addContratService(Contrat c) {
+		contratDao.addContrat(c);
 	}
 
 	@Override
-	public void deleteContratService(int idContrat, Agent a) {
-		// TODO Auto-generated method stub
-		
+	public void deleteContratService(int idContrat) {
+		contratDao.deleteContrat(idContrat);
 	}
 
 	@Override
-	public void updateContratService(Contrat c, Agent a) {
-		// TODO Auto-generated method stub
-		
+	public void updateContratService(Contrat c) {
+		contratDao.updateContrat(c);	
 	}
 
 	@Override
-	public List<Contrat> getAllContratService(Agent a) {
-		return contratDao.getAllContrat(a);
+	public List<Contrat> getAllContratService() {
+		return contratDao.getAllContrat();
 	}
 
 	@Override
-	public Contrat getContratByIdService(int idContrat, Agent a) {
-		// TODO Auto-generated method stub
-		return null;
+	public Contrat getContratByIdService(int idContrat) {
+		return contratDao.getContratById(idContrat);
 	}
 
 }

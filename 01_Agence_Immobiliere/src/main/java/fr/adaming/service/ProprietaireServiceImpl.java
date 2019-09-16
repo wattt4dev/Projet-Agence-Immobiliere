@@ -16,8 +16,8 @@ public class ProprietaireServiceImpl implements IProprietaireService {
 	private IProprietaireDao proprietaireDao;
 	
 	@Override
-	public Proprietaire addProprietaire(Proprietaire p) {
-		return proprietaireDao.addProprietaire(p);
+	public void addProprietaire(Proprietaire p) {
+		proprietaireDao.addProprietaire(p);
 	}
 
 	@Override

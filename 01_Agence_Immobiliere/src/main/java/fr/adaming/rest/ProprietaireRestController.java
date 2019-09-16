@@ -33,8 +33,8 @@ public class ProprietaireRestController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
-	public Proprietaire addProprietaire(@RequestBody Proprietaire proprietaireIn) {
-		return proprietaireService.addProprietaire(proprietaireIn);
+	public void addProprietaire(@RequestBody Proprietaire proprietaireIn) {
+		proprietaireService.addProprietaire(proprietaireIn);
 	}
 
 	@RequestMapping(value = "/delete/{pIdProprietaire}", method = RequestMethod.DELETE)

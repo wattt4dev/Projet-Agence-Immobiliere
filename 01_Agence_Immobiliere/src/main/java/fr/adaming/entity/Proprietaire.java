@@ -1,6 +1,8 @@
 package fr.adaming.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;

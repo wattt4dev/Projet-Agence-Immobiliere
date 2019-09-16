@@ -8,55 +8,36 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.entity.Agent;
 import fr.adaming.entity.Proprietaire;
 
 @Repository
-public class ProprietaireDaoImpl implements IProprietaireDao{
+public class ProprietaireDaoImpl implements IProprietaireDao {
 
 	@PersistenceContext
 	private EntityManager em;
-	
+
+	@Transactional
 	@Override
-	public Proprietaire addProprietaire(Proprietaire p) {
-		EntityTransaction transaction = em.getTransaction();
-		transaction.begin();
-		Query query = em.createNativeQuery(
-				"INSERT INTO Proprietaire (telephoneProfessionnel, adresseProprietaire, nomPersonne, telephonePrive) VALUES (?,?,?,?)");
-		query.setParameter(2, p.getTelephoneProfessionnel());
-		query.setParameter(3, p.getAdresseProprietaire());
-		query.setParameter(4, p.getNomPersonne()); 
-		query.setParameter(5, p.getTelephonePrive());
-		query.executeUpdate();
-		transaction.commit();
-		return p;
+	public void addProprietaire(Proprietaire p) {
+		em.persist(p);
 	}
 
+	@Transactional
 	@Override
 	public void deleteProprietaire(int idProprietaire) {
-		// Récup d'une transaction:
-				em.getTransaction().begin();
 
-				// String requête:
-				String requeteDelete = "DELETE FROM Proprietaire proprietaire WHERE proprietaire.idPersonne=:pIdProprietaire";
-				// Construction de la requête via l'EM:
-				Query deleteQuery = em.createQuery(requeteDelete);
-
-				// Passage de params:
-				deleteQuery.setParameter("pIdProprietaire", idProprietaire);
-
-				// Execution de la requête:
-				deleteQuery.executeUpdate();
-
-				// Validation de la tx:
-				em.getTransaction().commit();
-		
+		Query deleteQuery = em
+				.createQuery("DELETE FROM Proprietaire proprietaire WHERE proprietaire.idPersonne=:pIdProprietaire");
+		deleteQuery.setParameter("pIdProprietaire", idProprietaire);
+		deleteQuery.executeUpdate();
 	}
 
+	@Transactional
 	@Override
 	public void updateProprietaire(Proprietaire p) {
-			// Récup d'une transaction:
+		// Récup d'une transaction:
 		EntityTransaction entityTransaction = em.getTransaction();
 		entityTransaction.begin();
 
@@ -67,7 +48,7 @@ public class ProprietaireDaoImpl implements IProprietaireDao{
 		Query updateQuery = em.createQuery(requeteMAJ);
 
 		// Passage de params:
-		updateQuery.setParameter("pTelephoneProfessionnel",p.getTelephoneProfessionnel());
+		updateQuery.setParameter("pTelephoneProfessionnel", p.getTelephoneProfessionnel());
 		updateQuery.setParameter("pAdresseProprietaire", p.getAdresseProprietaire());
 		updateQuery.setParameter("pNomPersonne", p.getNomPersonne());
 		updateQuery.setParameter("pTelephonePrive", p.getTelephonePrive());
@@ -77,9 +58,10 @@ public class ProprietaireDaoImpl implements IProprietaireDao{
 
 		// Validation de la tx:
 		entityTransaction.commit();
-		
+
 	}
 
+	@Transactional
 	@Override
 	public List<Proprietaire> getAllProprietaire() {
 		Query query = em.createQuery("FROM Proprietaire p");
@@ -87,6 +69,7 @@ public class ProprietaireDaoImpl implements IProprietaireDao{
 		return proprietaires;
 	}
 
+	@Transactional
 	@Override
 	public Proprietaire getProprietaireById(int idProprietaire) {
 		em.getTransaction().begin();

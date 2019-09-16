@@ -7,7 +7,7 @@ import fr.adaming.entity.Proprietaire;
 
 public interface IProprietaireService {
 	
-	public Proprietaire addProprietaire(Proprietaire p);
+	public void addProprietaire(Proprietaire p);
 	public void deleteProprietaire(int idProprietaire);
 	public void updateProprietaire(Proprietaire p);
 	public List<Proprietaire> getAllProprietaire();

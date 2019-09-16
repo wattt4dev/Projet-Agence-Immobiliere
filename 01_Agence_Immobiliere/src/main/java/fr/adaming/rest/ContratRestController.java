@@ -26,8 +26,8 @@ public class ContratRestController {
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/getAll", produces="application/json")
-	public List<Contrat> getAllContratRest(Agent a){
-		return contratService.getAllContratService(a);
+	public List<Contrat> getAllContratRest(){
+		return contratService.getAllContratService();
 	}
 	
 	

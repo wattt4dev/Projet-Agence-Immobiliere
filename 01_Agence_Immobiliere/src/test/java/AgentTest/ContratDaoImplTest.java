@@ -1,6 +1,6 @@
 package AgentTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,8 +34,8 @@ public class ContratDaoImplTest {
 		Agent a = new Agent("Robert", "0606060606", "aaa");
 		Contrat c = new Contrat(125, "septembre");
 		contratDao.addContrat(c);
-		double prixContratExpected = 125;
-		double prixContratObtenu = contratDao.addContrat(c).getPrixContrat();
+		int prixContratExpected = 125;
+		int prixContratObtenu = (int) contratDao.addContrat(c).getPrixContrat();
 		assertEquals(prixContratExpected, prixContratObtenu);
 	}
 	

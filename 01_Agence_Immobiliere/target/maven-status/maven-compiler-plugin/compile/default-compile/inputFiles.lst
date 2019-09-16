@@ -1,37 +1,37 @@
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\CategorieRestController.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IAlouerDao.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ClientDaoImpl.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IContratDao.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Visite.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IClientService.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\ProprietaireRestController.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IProprietaireDao.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ICategorieDao.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ProprietaireServiceImpl.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ICategorieService.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Personne.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Proprietaire.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\CategorieServiceImpl.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Alouer.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\BienImmobilier.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ContratDaoImpl.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IVisiteDao.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Aacheter.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IProprietaireService.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\AgentDaoImpl.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ClientServiceImpl.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ProprietaireDaoImpl.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Agent.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IAcheterDao.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ContratServiceImpl.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Client.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IClientDao.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Contrat.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Categorie.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IAgentService.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\ClientRestController.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IAgentDao.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\ContratRestController.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\CategorieDaoImpl.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IContratService.java
-C:\Users\IN-BR-014\Desktop\formtion javajee\10_ProjetFinal\maven.1568568425302\01_Agence_Immobiliere\src\main\java\fr\adaming\service\AgentServiceImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IProprietaireService.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Contrat.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Personne.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ICategorieDao.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IClientService.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ClientDaoImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IAgentService.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ICategorieService.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\AgentDaoImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Categorie.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IVisiteDao.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Client.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ContratDaoImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\CategorieDaoImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ClientServiceImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ProprietaireDaoImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ContratServiceImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Aacheter.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Visite.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\CategorieRestController.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Agent.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Alouer.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\AgentServiceImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IContratService.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\ClientRestController.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\ProprietaireRestController.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ProprietaireServiceImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\BienImmobilier.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IAlouerDao.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Proprietaire.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\ContratRestController.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IAcheterDao.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IClientDao.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IContratDao.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IProprietaireDao.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\CategorieServiceImpl.java
+C:\Users\IN-BR-006\git\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IAgentDao.java

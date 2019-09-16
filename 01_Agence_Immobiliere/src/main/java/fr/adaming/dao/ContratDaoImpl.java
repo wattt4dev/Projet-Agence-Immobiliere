@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import fr.adaming.entity.Agent;
 import fr.adaming.entity.Contrat;
@@ -21,6 +22,7 @@ public class ContratDaoImpl implements IContratDao {
 	private EntityManager em;
 
 	@Override
+	@Transactional
 	public Contrat addContrat(Contrat c) {
 //		// 1. Première méthode: "persist"
 //		// EntityManager em =
@@ -33,24 +35,14 @@ public class ContratDaoImpl implements IContratDao {
 //		// return c;
 //
 //		// 2. Deuxième méthode: requête JPQL
-		EntityTransaction transaction = em.getTransaction();
-		transaction.begin();
-		Query query = em.createNativeQuery(
-				"INSERT INTO Contrat (idContrat, prixContrat, dateTransactionContrat, idBienImmobilier) VALUES (?,?,?,?)");
+		
+		Query query = em.createQuery("INSERT INTO Contrat (idContrat, prixContrat, dateTransactionContrat) VALUES (?,?,?)");
 		query.setParameter(1, c.getIdContrat());
 		query.setParameter(2, c.getPrixContrat());
 		query.setParameter(3, c.getDateTransactionContrat());
-		query.setParameter(4, c.getBienImmobilier().getIdBienImmobilier()); // Ici p-e rajouter un getIdBienImmobilier?
 		query.executeUpdate();
-		transaction.commit();
 		return c;
 
-		// A voir si les "idContrat" etc correspondent bien à ce qu'il faut mettre dans
-		// la requête, il me semble qu'avec hibernate on parle aux entités mais du coup
-		// JPA je sais plus, enfin quand on testera si ça marche pas éventuellement
-		// regarder
-		// si c'est pas juste pcq j'ai pas appelé les bonnes colonnes
-		//return null;
 	}
 
 	@Override

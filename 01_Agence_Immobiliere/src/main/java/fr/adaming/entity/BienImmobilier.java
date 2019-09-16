@@ -1,5 +1,6 @@
 package fr.adaming.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +19,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class BienImmobilier {
+public class BienImmobilier implements Serializable {
 	
 	// Attributs:
 	@Id

@@ -1,5 +1,6 @@
 package fr.adaming.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -12,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Visite {
+public class Visite implements Serializable{
 
 	// Attributs:
 	@Id

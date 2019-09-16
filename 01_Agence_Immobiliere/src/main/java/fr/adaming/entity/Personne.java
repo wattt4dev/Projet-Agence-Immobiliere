@@ -1,5 +1,7 @@
 package fr.adaming.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +15,7 @@ import org.hibernate.type.SerializableType;
 @Entity
 @Table(name = "personne")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Personne{
+public class Personne implements Serializable{
 
 	// Attributs:
 	@Id

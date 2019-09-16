@@ -10,7 +10,7 @@ public interface ICategorieDao {
 	public Categorie addCategorie(Categorie c);
 	public void deleteCategorie(int idCategorie);
 	public void updateCategorie(Categorie c);
-	public List<Categorie> getAllCategorie(Agent a);
-	public Categorie getCategorieById(int idCategorie, Agent a);
+	public List<Categorie> getAllCategorie();
+	public Categorie getCategorieById(int idCategorie);
 
 }

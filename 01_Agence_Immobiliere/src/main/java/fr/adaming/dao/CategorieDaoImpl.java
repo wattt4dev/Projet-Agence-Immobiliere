@@ -85,14 +85,14 @@ public class CategorieDaoImpl implements ICategorieDao{
 	}
 
 	@Override
-	public List<Categorie> getAllCategorie(Agent a) {
+	public List<Categorie> getAllCategorie() {
 		Query query = em.createQuery("FROM Categorie c");
 		List<Categorie> categories = query.getResultList();
 		return categories;
 	}
 
 	@Override
-	public Categorie getCategorieById(int idCategorie, Agent a) {
+	public Categorie getCategorieById(int idCategorie) {
 		em.getTransaction().begin();
 		String getByIdRequete = "SELECT Categorie FROM Categorie categorie WHERE categorie.idCategorie = :pIdCategorie";
 		Query getByIdJpqlReq = em.createQuery(getByIdRequete);

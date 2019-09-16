@@ -22,7 +22,7 @@ public class Visite {
 	
 	//Approche UML
 	//One BienImmobilier ToMany Visite
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="id_BienImmobilier", referencedColumnName="idBienImmobilier")//côté porteur FK
 	private BienImmobilier bienImmobilier;
 

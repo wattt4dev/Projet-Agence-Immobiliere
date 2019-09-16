@@ -26,10 +26,14 @@ public class CategorieRestController {
 	//méthodes 
 	
 	@RequestMapping(method=RequestMethod.GET, value="/getAll", produces="application/json")
-	public List<Categorie> getAllContratRest(Agent a){
-		return categorieService.getAllCategorie(a);
+	public List<Categorie> getAllCategorieRest(){
+		return categorieService.getAllCategorie();
 	}
 	
+	@RequestMapping(method=RequestMethod.POST, value="/add", produces="application/json", consumes="application/json")
+	public Categorie addCategorieRest(Categorie c) {
+		return categorieService.addCategorie(c);
+	}
 	
 	
 }

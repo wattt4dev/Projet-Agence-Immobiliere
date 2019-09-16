@@ -19,12 +19,11 @@ public class ProprietaireDaoImpl implements IProprietaireDao{
 	private EntityManager em;
 	
 	@Override
-	public Proprietaire addProprietaire(Proprietaire p, Agent a) {
+	public Proprietaire addProprietaire(Proprietaire p) {
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		Query query = em.createNativeQuery(
-				"INSERT INTO Proprietaire (idProprietaire, telephoneProfessionnel, adresseProprietaire, nomPersonne, telephonePrive) VALUES (?,?,?,?,?)");
-		query.setParameter(1, p.getIdProprietaire());
+				"INSERT INTO Proprietaire (telephoneProfessionnel, adresseProprietaire, nomPersonne, telephonePrive) VALUES (?,?,?,?)");
 		query.setParameter(2, p.getTelephoneProfessionnel());
 		query.setParameter(3, p.getAdresseProprietaire());
 		query.setParameter(4, p.getNomPersonne()); 
@@ -35,12 +34,12 @@ public class ProprietaireDaoImpl implements IProprietaireDao{
 	}
 
 	@Override
-	public void deleteProprietaire(int idProprietaire, Agent a) {
+	public void deleteProprietaire(int idProprietaire) {
 		// Récup d'une transaction:
 				em.getTransaction().begin();
 
 				// String requête:
-				String requeteDelete = "DELETE FROM Proprietaire proprietaire WHERE proprietaire.idProprietaire=:pIdProprietaire";
+				String requeteDelete = "DELETE FROM Proprietaire proprietaire WHERE proprietaire.idPersonne=:pIdProprietaire";
 				// Construction de la requête via l'EM:
 				Query deleteQuery = em.createQuery(requeteDelete);
 
@@ -56,13 +55,13 @@ public class ProprietaireDaoImpl implements IProprietaireDao{
 	}
 
 	@Override
-	public void updateProprietaire(Proprietaire p, Agent a) {
+	public void updateProprietaire(Proprietaire p) {
 			// Récup d'une transaction:
 		EntityTransaction entityTransaction = em.getTransaction();
 		entityTransaction.begin();
 
 		// String requête:
-		String requeteMAJ = "UPDATE Proprietaire proprietaire SET proprietaire.telephoneProfessionnel=:pTelephoneProfessionnel , proprietaire.adresseProprietaire=:pAdresseProprietaire , proprietaire.nomPersonne=:pNomPersonne , proprietaire.telephonePrive=:pTelephonePrive WHERE proprietaire.idProprietaire=:pIdProprietaire";
+		String requeteMAJ = "UPDATE Proprietaire proprietaire SET proprietaire.telephoneProfessionnel=:pTelephoneProfessionnel , proprietaire.adresseProprietaire=:pAdresseProprietaire , proprietaire.nomPersonne=:pNomPersonne , proprietaire.telephonePrive=:pTelephonePrive WHERE proprietaire.idPersonne=:pIdProprietaire";
 
 		// Construction de la requête via l'EM:
 		Query updateQuery = em.createQuery(requeteMAJ);
@@ -72,7 +71,6 @@ public class ProprietaireDaoImpl implements IProprietaireDao{
 		updateQuery.setParameter("pAdresseProprietaire", p.getAdresseProprietaire());
 		updateQuery.setParameter("pNomPersonne", p.getNomPersonne());
 		updateQuery.setParameter("pTelephonePrive", p.getTelephonePrive());
-		updateQuery.setParameter("pIdProprietaire", p.getIdProprietaire());
 
 		// Execution de la requête:
 		updateQuery.executeUpdate();
@@ -83,16 +81,16 @@ public class ProprietaireDaoImpl implements IProprietaireDao{
 	}
 
 	@Override
-	public List<Proprietaire> getAllProprietaire(Agent a) {
+	public List<Proprietaire> getAllProprietaire() {
 		Query query = em.createQuery("FROM Proprietaire p");
 		List<Proprietaire> proprietaires = query.getResultList();
 		return proprietaires;
 	}
 
 	@Override
-	public Proprietaire getProprietaireById(int idProprietaire, Agent a) {
+	public Proprietaire getProprietaireById(int idProprietaire) {
 		em.getTransaction().begin();
-		String getByIdRequete = "SELECT Proprietaire FROM CProprietaire proprietaire WHERE proprietaire.idProprietaire=:pIdProprietaire";
+		String getByIdRequete = "SELECT Proprietaire FROM Proprietaire proprietaire WHERE proprietaire.idPersonne=:pIdProprietaire";
 		Query getByIdJpqlReq = em.createQuery(getByIdRequete);
 		getByIdJpqlReq.setParameter("pIdProprietaire", idProprietaire);
 		Proprietaire proprietaireById = (Proprietaire) getByIdJpqlReq.getSingleResult();

@@ -16,30 +16,30 @@ public class ProprietaireServiceImpl implements IProprietaireService {
 	private IProprietaireDao proprietaireDao;
 	
 	@Override
-	public Proprietaire addProprietaire(Proprietaire p, Agent a) {
-		return proprietaireDao.addProprietaire(p, a);
+	public Proprietaire addProprietaire(Proprietaire p) {
+		return proprietaireDao.addProprietaire(p);
 	}
 
 	@Override
-	public void deleteProprietaire(int idProprietaire, Agent a) {
-		proprietaireDao.deleteProprietaire(idProprietaire, a);
+	public void deleteProprietaire(int idProprietaire) {
+		proprietaireDao.deleteProprietaire(idProprietaire);
 		
 	}
 
 	@Override
-	public void updateProprietaire(Proprietaire p, Agent a) {
-		proprietaireDao.updateProprietaire(p, a);
+	public void updateProprietaire(Proprietaire p) {
+		proprietaireDao.updateProprietaire(p);
 		
 	}
 
 	@Override
-	public List<Proprietaire> getAllProprietaire(Agent a) {
-		return proprietaireDao.getAllProprietaire(a);
+	public List<Proprietaire> getAllProprietaire() {
+		return proprietaireDao.getAllProprietaire();
 	}
 
 	@Override
-	public Proprietaire getProprietaireById(int idProprietaire, Agent a) {
-		return proprietaireDao.getProprietaireById(idProprietaire, a);
+	public Proprietaire getProprietaireById(int idProprietaire) {
+		return proprietaireDao.getProprietaireById(idProprietaire);
 	}
 
 }

@@ -12,7 +12,6 @@ public class Proprietaire extends Personne{
 	// Attributs:
 	private String telephoneProfessionnel;
 	private String adresseProprietaire;
-	private int idProprietaire;
 	
 	//attribut UML
 	// one proprietaire to many BienImmobiliers
@@ -53,14 +52,6 @@ public class Proprietaire extends Personne{
 
 	public void setAdresseProprietaire(String adresseProprietaire) {
 		this.adresseProprietaire = adresseProprietaire;
-	}
-
-	public int getIdProprietaire() {
-		return idProprietaire;
-	}
-
-	public void setIdProprietaire(int idProprietaire) {
-		this.idProprietaire = idProprietaire;
 	}
 
 	public List<BienImmobilier> getListeBienImmobiliersProprietaire() {

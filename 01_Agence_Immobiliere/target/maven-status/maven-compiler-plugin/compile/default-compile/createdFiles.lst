@@ -14,6 +14,28 @@ fr\adaming\rest\ClientRestController.class
 fr\adaming\dao\IVisiteDao.class
 fr\adaming\entity\Alouer.class
 fr\adaming\dao\ICategorieDao.class
+<<<<<<< HEAD
+fr\adaming\service\VisiteServiceImpl.class
+fr\adaming\service\ClientServiceImpl.class
+fr\adaming\service\IVisiteService.class
+fr\adaming\entity\BienImmobilier.class
+fr\adaming\dao\ContratDaoImpl.class
+fr\adaming\dao\AgentDaoImpl.class
+fr\adaming\entity\Categorie.class
+fr\adaming\entity\Client.class
+fr\adaming\dao\IContratDao.class
+fr\adaming\service\IProprietaireService.class
+fr\adaming\service\ProprietaireServiceImpl.class
+fr\adaming\entity\Contrat.class
+fr\adaming\dao\IAlouerDao.class
+fr\adaming\rest\ProprietaireRestController.class
+fr\adaming\entity\Agent.class
+fr\adaming\entity\Visite.class
+fr\adaming\service\IClientService.class
+fr\adaming\entity\Aacheter.class
+fr\adaming\rest\ContratRestController.class
+fr\adaming\dao\VisiteDaoImpl.class
+=======
 fr\adaming\service\ClientServiceImpl.class
 fr\adaming\entity\BienImmobilier.class
 fr\adaming\dao\ContratDaoImpl.class
@@ -31,6 +53,7 @@ fr\adaming\entity\Visite.class
 fr\adaming\service\IClientService.class
 fr\adaming\entity\Aacheter.class
 fr\adaming\rest\ContratRestController.class
+>>>>>>> branch 'master' of https://github.com/wattt4dev/Projet-Agence-Immobiliere.git
 fr\adaming\dao\IClientDao.class
 fr\adaming\entity\Personne.class
 fr\adaming\service\ContratServiceImpl.class

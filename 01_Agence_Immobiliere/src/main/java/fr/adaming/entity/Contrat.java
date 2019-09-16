@@ -1,5 +1,6 @@
 package fr.adaming.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -12,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Contrat {
+public class Contrat implements Serializable {
 
 	// Attributs:
 	@Id

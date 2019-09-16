@@ -50,12 +50,12 @@ public class BienImmobilier implements Serializable {
 	
 	//ManyBienImmobilier to One Client
 	@ManyToOne
-	@JoinColumn(name="id_client", referencedColumnName="idClient")//côté porteur FK
+	@JoinColumn(name="id_client", referencedColumnName="idPersonne")//côté porteur FK
 	private Client client;
 	
 	//ManyBienImmobilier to One Proprietaire
 	@ManyToOne
-	@JoinColumn(name="id_proprietaire", referencedColumnName="idProprietaire")//côté porteur FK
+	@JoinColumn(name="id_proprietaire", referencedColumnName="idPersonne")//côté porteur FK
 	private Proprietaire proprietaire;
 	
 	//OneBienImmobilier To One Contrat

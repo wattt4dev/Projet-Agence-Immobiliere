@@ -1,5 +1,6 @@
 package fr.adaming.entity;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -7,7 +8,6 @@ import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -24,7 +24,7 @@ public class Categorie implements Serializable {
 	
 	//Approche UML
 	//one categorie to many bienImmobiliers
-	@OneToMany(mappedBy="categorie", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "categorie")
 	private List<BienImmobilier> listeBienImmobiliersCategorie;
 
 	// Constructeurs:

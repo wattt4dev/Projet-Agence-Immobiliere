@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import fr.adaming.entity.Agent;
 import fr.adaming.entity.Client;
-import fr.adaming.entity.Contrat;
 
 @Repository
 public class ClientDaoImpl implements IClientDao{

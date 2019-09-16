@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.dao.ContratDaoImpl;
+import fr.adaming.dao.IContratDao;
 import fr.adaming.entity.Agent;
 import fr.adaming.entity.Contrat;
 
@@ -14,7 +14,7 @@ import fr.adaming.entity.Contrat;
 public class ContratServiceImpl implements IContratService{
 	
 	@Autowired
-	private ContratDaoImpl contratDao;
+	IContratDao contratDao;
 
 	@Override
 	public Contrat addContratService(Contrat c) {
@@ -24,7 +24,6 @@ public class ContratServiceImpl implements IContratService{
 	@Override
 	public void deleteContratService(int idContrat) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

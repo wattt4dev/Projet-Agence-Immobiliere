@@ -21,28 +21,11 @@ public class ContratDaoImpl implements IContratDao {
 	@PersistenceContext
 	private EntityManager em;
 
-	@Override
 	@Transactional
+	@Override
 	public Contrat addContrat(Contrat c) {
-//		// 1. Première méthode: "persist"
-//		// EntityManager em =
-//		// Persistence.createEntityManagerFactory("01_Agence_Immobiliere").createEntityManager();
-//		// EntityTransaction transaction = em.getTransaction();
-//		// transaction.begin();
-//		// c.setAgent(a);
-//		// em.persist(c);
-//		// transaction.commit();
-//		// return c;
-//
-//		// 2. Deuxième méthode: requête JPQL
-		
-		Query query = em.createQuery("INSERT INTO Contrat (idContrat, prixContrat, dateTransactionContrat) VALUES (?,?,?)");
-		query.setParameter(1, c.getIdContrat());
-		query.setParameter(2, c.getPrixContrat());
-		query.setParameter(3, c.getDateTransactionContrat());
-		query.executeUpdate();
+		em.persist(c);
 		return c;
-
 	}
 
 	@Override

@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.adaming.entity.Agent;
 import fr.adaming.entity.Contrat;
-import fr.adaming.service.ContratServiceImpl;
+import fr.adaming.service.IContratService;
 
 @RestController
 @RequestMapping("/contrat")
@@ -18,7 +17,7 @@ import fr.adaming.service.ContratServiceImpl;
 public class ContratRestController {
 	
 	@Autowired
-	private ContratServiceImpl contratService; 
+	IContratService contratService; 
 
 	@RequestMapping(method=RequestMethod.POST, value="/add", produces="application/json", consumes="application/json")
 	public Contrat addContratRest(Contrat c) {

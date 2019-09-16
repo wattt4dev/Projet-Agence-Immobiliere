@@ -21,7 +21,7 @@ public class ContratDaoImpl implements IContratDao {
 	private EntityManager em;
 
 	@Override
-	public Contrat addContrat(Contrat c, Agent a) {
+	public Contrat addContrat(Contrat c) {
 //		// 1. Première méthode: "persist"
 //		// EntityManager em =
 //		// Persistence.createEntityManagerFactory("01_Agence_Immobiliere").createEntityManager();
@@ -54,7 +54,7 @@ public class ContratDaoImpl implements IContratDao {
 	}
 
 	@Override
-	public void deleteContrat(int idContrat, Agent a) {
+	public void deleteContrat(int idContrat) {
 
 		// Récup d'une transaction:
 		em.getTransaction().begin();
@@ -79,7 +79,7 @@ public class ContratDaoImpl implements IContratDao {
 	}
 
 	@Override
-	public void updateContrat(Contrat c, Agent a) {
+	public void updateContrat(Contrat c) {
 		// Récup d'une transaction:
 		EntityTransaction entityTransaction = em.getTransaction();
 		entityTransaction.begin();
@@ -105,7 +105,7 @@ public class ContratDaoImpl implements IContratDao {
 	}
 
 	@Override
-	public List<Contrat> getAllContrat(Agent a) {
+	public List<Contrat> getAllContrat() {
 		Query query = em.createQuery("FROM Contrat c");
 		List<Contrat> contrats = query.getResultList();
 		return contrats;
@@ -113,7 +113,7 @@ public class ContratDaoImpl implements IContratDao {
 	}
 
 	@Override
-	public Contrat getContratById(int idContrat, Agent a) {
+	public Contrat getContratById(int idContrat) {
 		em.getTransaction().begin();
 		String getByIdRequete = "SELECT contrat FROM Contrat contrat WHERE contrat.idContrat = :pIdContrat";
 		Query getByIdJpqlReq = em.createQuery(getByIdRequete);

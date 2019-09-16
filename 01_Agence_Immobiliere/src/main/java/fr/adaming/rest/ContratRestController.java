@@ -21,8 +21,8 @@ public class ContratRestController {
 	private ContratServiceImpl contratService; 
 
 	@RequestMapping(method=RequestMethod.POST, value="/add", produces="application/json", consumes="application/json")
-	public Contrat addContratRest(Contrat c, Agent a) {
-		return contratService.addContratService(c, a);
+	public Contrat addContratRest(Contrat c) {
+		return contratService.addContratService(c);
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/getAll", produces="application/json")

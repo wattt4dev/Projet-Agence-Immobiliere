@@ -23,27 +23,27 @@ public class ProprietaireRestController {
 	private IProprietaireService proprietaireService;
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET, produces = "application/json")
-	public List<Proprietaire> recupListeProprietaire() {
+	public List<Proprietaire> getAllProprietaireRest() {
 		return proprietaireService.getAllProprietaire();
 	}
 
-	@RequestMapping(value = "/getById", method = RequestMethod.GET, produces = "application/json")
-	public Proprietaire recupProprietaire(@RequestParam(value = "pIdProprietaire") int idProprietaire) {
+	@RequestMapping(value = "/getById/{pIdProprietaire}", method = RequestMethod.GET, produces = "application/json")
+	public Proprietaire recupProprietaireRest(@PathVariable("pIdProprietaire") int idProprietaire) {
 		return proprietaireService.getProprietaireById(idProprietaire);
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
-	public void addProprietaire(@RequestBody Proprietaire proprietaireIn) {
+	public void addProprietaireRest(@RequestBody Proprietaire proprietaireIn) {
 		proprietaireService.addProprietaire(proprietaireIn);
 	}
 
 	@RequestMapping(value = "/delete/{pIdProprietaire}", method = RequestMethod.DELETE)
-	public void deleteProprietaire(@PathVariable("pIdProprietaire") int idProprietaire) {
+	public void deleteProprietaireRest(@PathVariable("pIdProprietaire") int idProprietaire) {
 		proprietaireService.deleteProprietaire(idProprietaire);
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
-	public void updateProprietaire(@RequestBody Proprietaire proprietaireIn) {
+	public void updateProprietaireRest(@RequestBody Proprietaire proprietaireIn) {
 		proprietaireService.updateProprietaire(proprietaireIn);
 	}
 

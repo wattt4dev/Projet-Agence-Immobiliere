@@ -3,13 +3,17 @@ package fr.adaming.entity;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
-public class Proprietaire extends Personne{
+public class Proprietaire extends Personne implements Serializable{
 	
 	// Attributs:
 	private String telephoneProfessionnel;
@@ -18,6 +22,7 @@ public class Proprietaire extends Personne{
 	//attribut UML
 	// one proprietaire to many BienImmobiliers
 	@OneToMany(mappedBy="proprietaire", cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<BienImmobilier> listeBienImmobiliersProprietaire;
 	
 	// Constructeurs:

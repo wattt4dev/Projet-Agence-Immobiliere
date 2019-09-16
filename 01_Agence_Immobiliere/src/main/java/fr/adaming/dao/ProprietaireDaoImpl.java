@@ -37,10 +37,6 @@ public class ProprietaireDaoImpl implements IProprietaireDao {
 	@Transactional
 	@Override
 	public void updateProprietaire(Proprietaire p) {
-		// Récup d'une transaction:
-		EntityTransaction entityTransaction = em.getTransaction();
-		entityTransaction.begin();
-
 		// String requête:
 		String requeteMAJ = "UPDATE Proprietaire proprietaire SET proprietaire.telephoneProfessionnel=:pTelephoneProfessionnel , proprietaire.adresseProprietaire=:pAdresseProprietaire , proprietaire.nomPersonne=:pNomPersonne , proprietaire.telephonePrive=:pTelephonePrive WHERE proprietaire.idPersonne=:pIdProprietaire";
 
@@ -55,10 +51,6 @@ public class ProprietaireDaoImpl implements IProprietaireDao {
 
 		// Execution de la requête:
 		updateQuery.executeUpdate();
-
-		// Validation de la tx:
-		entityTransaction.commit();
-
 	}
 
 	@Transactional
@@ -72,7 +64,6 @@ public class ProprietaireDaoImpl implements IProprietaireDao {
 	@Transactional
 	@Override
 	public Proprietaire getProprietaireById(int idProprietaire) {
-		em.getTransaction().begin();
 		String getByIdRequete = "SELECT Proprietaire FROM Proprietaire proprietaire WHERE proprietaire.idPersonne=:pIdProprietaire";
 		Query getByIdJpqlReq = em.createQuery(getByIdRequete);
 		getByIdJpqlReq.setParameter("pIdProprietaire", idProprietaire);

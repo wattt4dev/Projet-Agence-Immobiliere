@@ -6,7 +6,6 @@ import fr.adaming.entity.Proprietaire;
 
 public interface IProprietaireDao {
 	
-
 	public void addProprietaire(Proprietaire p);
 	public void deleteProprietaire(int idProprietaire);
 	public void updateProprietaire(Proprietaire p);

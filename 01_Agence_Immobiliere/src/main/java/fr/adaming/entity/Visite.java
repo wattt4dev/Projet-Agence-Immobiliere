@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
+
+
 public class Visite implements Serializable{
 
 	// Attributs:

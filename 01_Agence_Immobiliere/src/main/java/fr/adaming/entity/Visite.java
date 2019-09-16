@@ -19,7 +19,7 @@ public class Visite implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idVisite;
-	private Date dateVisite;
+	private String dateVisite;
 	
 	//Approche UML
 	//One BienImmobilier ToMany Visite
@@ -32,16 +32,21 @@ public class Visite implements Serializable{
 		super();
 	}
 
-	public Visite(Date dateVisite) {
-		super();
-		this.dateVisite = dateVisite;
-	}
 
-	public Visite(int idVisite, Date dateVisite) {
+	public Visite(int idVisite, String dateVisite, BienImmobilier bienImmobilier) {
 		super();
 		this.idVisite = idVisite;
 		this.dateVisite = dateVisite;
+		this.bienImmobilier = bienImmobilier;
 	}
+
+
+	public Visite(String dateVisite, BienImmobilier bienImmobilier) {
+		super();
+		this.dateVisite = dateVisite;
+		this.bienImmobilier = bienImmobilier;
+	}
+
 
 	// Getters et setters:
 	public BienImmobilier getBienImmobilier() {
@@ -60,11 +65,11 @@ public class Visite implements Serializable{
 		this.idVisite = idVisite;
 	}
 
-	public Date getDateVisite() {
+	public String getDateVisite() {
 		return dateVisite;
 	}
 
-	public void setDateVisite(Date dateVisite) {
+	public void setDateVisite(String dateVisite) {
 		this.dateVisite = dateVisite;
 	}
 

@@ -28,8 +28,7 @@ public class ContratServiceImpl implements IContratService{
 
 	@Override
 	public void updateContratService(Contrat c) {
-		// TODO Auto-generated method stub
-		
+		contratDao.updateContrat(c);	
 	}
 
 	@Override

@@ -31,6 +31,12 @@ public class ContratRestController {
 		contratService.deleteContratService(idContrat);
 	}
 	
+	@RequestMapping(method=RequestMethod.PUT, consumes="application/json", value="/update")
+	public void updateContratRest(@RequestBody Contrat contrat) {
+		contratService.updateContratService(contrat);
+	}
+	
+	
 	@RequestMapping(method=RequestMethod.GET, value="/getAll", produces="application/json")
 	public List<Contrat> getAllContratRest(){
 		return contratService.getAllContratService();

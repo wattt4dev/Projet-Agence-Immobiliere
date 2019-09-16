@@ -33,31 +33,17 @@ public class ContratDaoImpl implements IContratDao {
 		deleteQuery.executeUpdate();
 	}
 
+	@Transactional
 	@Override
 	public void updateContrat(Contrat c) {
-		// Récup d'une transaction:
-		EntityTransaction entityTransaction = em.getTransaction();
-		entityTransaction.begin();
-
-		// String requête:
-		String requeteMAJ = "UPDATE Contrat contrat SET contrat.prixContrat=:pPrixContrat , contrat.dateTransactionContrat=:pDateTransactionContrat WHERE contrat.idContrat=:pIdContrat";
-
-		// Construction de la requête via l'EM:
-		Query updateQuery = em.createQuery(requeteMAJ);
-
-		// Passage de params:
+		Query updateQuery = em.createQuery("UPDATE Contrat c SET c.prixContrat = :pPrixContrat , c.dateTransactionContrat = :pDateTransactionContrat   WHERE c.idContrat= :pIdContrat");
+		// Passage des params
 		updateQuery.setParameter("pPrixContrat", c.getPrixContrat());
 		updateQuery.setParameter("pDateTransactionContrat", c.getDateTransactionContrat());
 		updateQuery.setParameter("pIdContrat", c.getIdContrat());
-
-		// Execution de la requête:
 		updateQuery.executeUpdate();
-
-		// Validation de la tx:
-		entityTransaction.commit();
-
-		// Eventuellement rajouter dans la requête la modif du bien immobilier associé?
 	}
+	
 	@Transactional
 	@Override
 	public List<Contrat> getAllContrat() {

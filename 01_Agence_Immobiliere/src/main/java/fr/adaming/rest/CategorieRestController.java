@@ -39,12 +39,12 @@ public class CategorieRestController {
 		categorieService.addCategorie(c);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@RequestMapping(value="/delete/{pId}", method=RequestMethod.DELETE)
 	public void deleteCategorie(@PathVariable ("pId") int id) {
 		categorieService.deleteCategorie(id);
 	}
 	
-	@RequestMapping(value="/getCategorie", method=RequestMethod.GET, produces="application/json" )
+	@RequestMapping(value="/getCategorie/{pId}", method=RequestMethod.GET, produces="application/json" )
 	public Categorie getCategorieById(@RequestParam("pId") int id) {
 		return categorieService.getCategorieById(id);
 	}

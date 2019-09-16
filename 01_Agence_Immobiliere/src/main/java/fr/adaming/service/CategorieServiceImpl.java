@@ -16,30 +16,30 @@ public class CategorieServiceImpl implements ICategorieService{
 	private ICategorieDao categorieDao;
 
 	@Override
-	public Categorie addCategorie(Categorie c, Agent a) {
-		return categorieDao.addCategorie(c, a);
+	public Categorie addCategorie(Categorie c) {
+		return categorieDao.addCategorie(c);
 	}
 
 	@Override
-	public void deleteCategorie(int idCategorie, Agent a) {
-		categorieDao.deleteCategorie(idCategorie, a);
+	public void deleteCategorie(int idCategorie) {
+		categorieDao.deleteCategorie(idCategorie);
 		
 	}
 
 	@Override
-	public void updateCategorie(Categorie c, Agent a) {
-		categorieDao.updateCategorie(c, a);
+	public void updateCategorie(Categorie c) {
+		categorieDao.updateCategorie(c);
 		
 	}
 
 	@Override
-	public List<Categorie> getAllCategorie(Agent a) {
-		return categorieDao.getAllCategorie(a);
+	public List<Categorie> getAllCategorie() {
+		return categorieDao.getAllCategorie();
 	}
 
 	@Override
-	public Categorie getCategorieById(int idCategorie, Agent a) {
-		return categorieDao.getCategorieById(idCategorie, a);
+	public Categorie getCategorieById(int idCategorie) {
+		return categorieDao.getCategorieById(idCategorie);
 	}
 
 }

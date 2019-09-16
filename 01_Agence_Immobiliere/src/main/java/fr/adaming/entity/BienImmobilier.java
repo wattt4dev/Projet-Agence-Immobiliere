@@ -1,5 +1,6 @@
 package fr.adaming.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +19,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class BienImmobilier {
+public class BienImmobilier implements Serializable {
 	
 	// Attributs:
 	@Id
@@ -49,12 +50,12 @@ public class BienImmobilier {
 	
 	//ManyBienImmobilier to One Client
 	@ManyToOne
-	@JoinColumn(name="id_client", referencedColumnName="idClient")//côté porteur FK
+	@JoinColumn(name="id_client", referencedColumnName="idPersonne")//côté porteur FK
 	private Client client;
 	
 	//ManyBienImmobilier to One Proprietaire
 	@ManyToOne
-	@JoinColumn(name="id_proprietaire", referencedColumnName="idProprietaire")//côté porteur FK
+	@JoinColumn(name="id_proprietaire", referencedColumnName="idPersonne")//côté porteur FK
 	private Proprietaire proprietaire;
 	
 	//OneBienImmobilier To One Contrat

@@ -17,6 +17,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class BienImmobilier implements Serializable {
@@ -36,6 +39,7 @@ public class BienImmobilier implements Serializable {
 	
 	//One BienImmobilier ToMany Visite
 	@OneToMany(mappedBy="bienImmobilier", cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Visite> listeVisites;
 	
 	//ManyBienImmobilier to One Agent

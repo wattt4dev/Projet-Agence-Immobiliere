@@ -25,7 +25,7 @@ public class Visite implements Serializable{
 	
 	//Approche UML
 	//One BienImmobilier ToMany Visite
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="id_BienImmobilier", referencedColumnName="idBienImmobilier")//côté porteur FK
 	private BienImmobilier bienImmobilier;
 

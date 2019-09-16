@@ -39,8 +39,7 @@ public class ALouerServiceImpl implements IALouerService {
 
 	@Override
 	public Alouer getAlouerByIdService(int idBienImmobilier) {
-		// TODO Auto-generated method stub
-		return null;
+		return aLouerDao.getAlouerById(idBienImmobilier);
 	}
 
 }

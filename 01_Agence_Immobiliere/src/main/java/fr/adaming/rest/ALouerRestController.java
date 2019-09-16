@@ -40,5 +40,10 @@ public class ALouerRestController {
 	public List<Alouer> getAllALouerRest(){
 		return aLouerService.getAllAlouerService();
 	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/getById/{pId}", produces="application/json")
+	public Alouer getByIdALouerRest(@PathVariable("pId") int idBienImmobilier) {
+		return aLouerService.getAlouerByIdService(idBienImmobilier);
+	}
 
 }

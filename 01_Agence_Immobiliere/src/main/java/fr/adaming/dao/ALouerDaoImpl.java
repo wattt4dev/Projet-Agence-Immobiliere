@@ -45,7 +45,7 @@ public class ALouerDaoImpl implements IAlouerDao {
 		updateQuery.setParameter("pChargesALouer", al.getChargesALouer());
 		updateQuery.setParameter("pBailALouer", al.getBailALouer());
 		updateQuery.setParameter("pGarnituresALouer", al.getGarnituresALouer());
-		updateQuery.setParameter("pidBienImmobilier", al.getIdBienImmobilier());
+		updateQuery.setParameter("pIdBienImmobilier", al.getIdBienImmobilier());
 		updateQuery.executeUpdate();
 	}
 
@@ -58,7 +58,10 @@ public class ALouerDaoImpl implements IAlouerDao {
 
 	@Override
 	public Alouer getAlouerById(int idBienImmobilier) {
-		return null;
+		Query query = em.createQuery("FROM Alouer al WHERE al.idBienImmobilier = :pIdBienImmobilier");
+		query.setParameter("pIdBienImmobilier", idBienImmobilier);
+		Alouer aLouer = (Alouer) query.getSingleResult();
+		return aLouer;
 	}
 
 }

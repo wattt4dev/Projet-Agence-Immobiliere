@@ -1,11 +1,11 @@
-package fr.adaming.dao;
+package fr.adaming.service;
 
 import java.util.List;
 
 import fr.adaming.entity.Agent;
 import fr.adaming.entity.Client;
 
-public interface IClientDao {
+public interface IClientService {
 	
 	public Client addClient(Client c, Agent a);
 	public void deleteClient(int idClient, Agent a);

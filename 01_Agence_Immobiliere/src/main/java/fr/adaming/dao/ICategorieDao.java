@@ -7,7 +7,7 @@ import fr.adaming.entity.Categorie;
 
 public interface ICategorieDao {
 	
-	public Categorie addCategorie(Categorie c);
+	public void addCategorie(Categorie c);
 	public void deleteCategorie(int idCategorie);
 	public void updateCategorie(Categorie c);
 	public List<Categorie> getAllCategorie();

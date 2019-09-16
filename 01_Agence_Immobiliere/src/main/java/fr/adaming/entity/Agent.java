@@ -24,10 +24,9 @@ public class Agent extends Personne  {
 		super();
 	}
 
-	public Agent(String nomPersonne, String telephonePrive, String mdpAgent, int idAgent) {
+	public Agent(String nomPersonne, String telephonePrive, String mdpAgent) {
 		super(nomPersonne, telephonePrive);
 		this.mdpAgent = mdpAgent;
-		this.idAgent = idAgent;
 	}
 	
 	public Agent(int idPersonne, String nomPersonne, String telephonePrive, String mdpAgent) {

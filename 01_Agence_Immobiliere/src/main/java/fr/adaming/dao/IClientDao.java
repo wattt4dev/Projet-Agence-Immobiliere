@@ -7,10 +7,10 @@ import fr.adaming.entity.Client;
 
 public interface IClientDao {
 	
-	public Client addClient(Client c, Agent a);
-	public void deleteClient(int idPersonne, Agent a);
-	public void updateClient(Client c, Agent a);
-	public List<Client> getAllClient(Agent a);
-	public Client getClientById(int idPersonne, Agent a);
+	public void addClient(Client c);
+	public void deleteClient(int idPersonne);
+	public void updateClient(Client c);
+	public List<Client> getAllClient();
+	public Client getClientById(int idPersonne);
 
 }

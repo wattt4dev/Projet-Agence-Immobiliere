@@ -17,18 +17,18 @@ public class CategorieServiceImpl implements ICategorieService{
 
 	@Override
 	public Categorie addCategorie(Categorie c, Agent a) {
-		return categorieDao.addCategorie(c, a);
+		return categorieDao.addCategorie(c);
 	}
 
 	@Override
 	public void deleteCategorie(int idCategorie, Agent a) {
-		categorieDao.deleteCategorie(idCategorie, a);
+		categorieDao.deleteCategorie(idCategorie);
 		
 	}
 
 	@Override
 	public void updateCategorie(Categorie c, Agent a) {
-		categorieDao.updateCategorie(c, a);
+		categorieDao.updateCategorie(c);
 		
 	}
 

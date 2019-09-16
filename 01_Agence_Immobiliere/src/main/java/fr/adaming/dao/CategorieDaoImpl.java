@@ -20,11 +20,11 @@ public class CategorieDaoImpl implements ICategorieDao{
 	private EntityManager em;
 	
 	@Override
-	public Categorie addCategorie(Categorie c, Agent a) {
+	public Categorie addCategorie(Categorie c) {
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		Query query = em.createNativeQuery(
-				"INSERT INTO Categorie (idCategorie, typeCategorie, modeCategorie, superficieCategorie, nombreDeChambresCategorie) VALUES (?,?,?,?,?)");
+				"INSERT INTO Categorie (idCategorie, typeCategorie, modeCategorie, superficieCategorie, nombreDeChambresCategorie) VALUES (?,?,?,?,?,?)");
 		query.setParameter(1, c.getIdCategorie());
 		query.setParameter(2, c.getTypeCategorie());
 		query.setParameter(3, c.getModeCategorie());
@@ -37,7 +37,7 @@ public class CategorieDaoImpl implements ICategorieDao{
 	}
 
 	@Override
-	public void deleteCategorie(int idCategorie, Agent a) {
+	public void deleteCategorie(int idCategorie) {
 		// Récup d'une transaction:
 		em.getTransaction().begin();
 
@@ -49,6 +49,7 @@ public class CategorieDaoImpl implements ICategorieDao{
 		// Passage de params:
 		deleteQuery.setParameter("pIdCategorie", idCategorie);
 
+
 		// Execution de la requête:
 		deleteQuery.executeUpdate();
 
@@ -58,7 +59,7 @@ public class CategorieDaoImpl implements ICategorieDao{
 	}
 
 	@Override
-	public void updateCategorie(Categorie c, Agent a) {
+	public void updateCategorie(Categorie c) {
 		// Récup d'une transaction:
 				EntityTransaction entityTransaction = em.getTransaction();
 				entityTransaction.begin();

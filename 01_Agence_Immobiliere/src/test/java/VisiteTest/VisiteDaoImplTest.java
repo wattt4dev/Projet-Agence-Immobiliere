@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,20 +43,43 @@ public class VisiteDaoImplTest {
 //		assertEquals(sizeExpected, sizeObtenue);
 //	}
 	
+//	@Test
+//	public void testDeleteVisite() throws ParseException {
+//		
+//		
+//		int idVisite = 1;
+//		
+//		 vService.deleteVisite(idVisite);
+//		
+//			int sizeExpected=1;
+//			int sizeObtenue = vService.getAllVisite().size();
+//		assertEquals(sizeExpected, sizeObtenue);
+//	}
+	
+//	@Test
+//	public void testGetByIdVisite() throws ParseException {
+//		
+//		
+//		int idVisite = 3;
+//		
+//		 Visite v =vService.getVisiteById(idVisite);
+//		
+//			Date date = v.getDateVisite();
+//			System.out.println(date);
+//			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+//			Date dateExpected = simpleDateFormat.parse("25/12/2010");
+//		//assertEquals(date, dateExpected);
+//	}
+	
 	@Test
-	public void testDeleteVisite() throws ParseException {
+	public void testGetByIdVisite() {
 		
-		
-		int idVisite = 1;
-		
-		 vService.deleteVisite(idVisite);
-		
-			int sizeExpected=1;
-			int sizeObtenue = vService.getAllVisite().size();
-		assertEquals(sizeExpected, sizeObtenue);
+		Visite v = new Visite();
+		int idVisite=1;
+		Visite v1 = vService.getVisiteById(idVisite);
+		v1.setDateVisite("Demain");
+		vService.updateVisite(v1);
+
 	}
-	
-	
-	
 
 }

@@ -28,8 +28,7 @@ public class VisiteServiceImpl implements IVisiteService {
 
 	@Override
 	public void updateVisite(Visite v) {
-		// TODO Auto-generated method stub
-		
+		vDao.updateVisite(v);
 	}
 
 	@Override
@@ -41,7 +40,7 @@ public class VisiteServiceImpl implements IVisiteService {
 	@Override
 	public Visite getVisiteById(int idVisite) {
 		
-		return null;
+		return vDao.getVisiteById(idVisite);
 	}
 
 }

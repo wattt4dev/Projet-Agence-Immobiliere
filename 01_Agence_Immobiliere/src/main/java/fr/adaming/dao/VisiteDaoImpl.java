@@ -34,10 +34,15 @@ public class VisiteDaoImpl implements IVisiteDao {
 		deleteQuery.executeUpdate();
 	}
 
+	@Transactional
 	@Override
 	public void updateVisite(Visite v) {
-		// TODO Auto-generated method stub
-		
+		Query updateQuery = em.createQuery("UPDATE Visite v SET v.dateVisite = :pDateVisite , v.bienImmobilier = :pBienImmobilier   WHERE v.idVisite= :pIdVisite");
+		// Passage des params
+		updateQuery.setParameter("pDateVisite", v.getDateVisite());
+		updateQuery.setParameter("pBienImmobilier", v.getBienImmobilier());
+		updateQuery.setParameter("pIdVisite", v.getIdVisite() );
+		updateQuery.executeUpdate();
 	}
 
 	@Override
@@ -48,11 +53,13 @@ public class VisiteDaoImpl implements IVisiteDao {
 		
 	}
 
+	@Transactional
 	@Override
 	public Visite getVisiteById(int idVisite) {
-		Query query = em.createQuery("FROM Visite v ");
-		List<Visite> visites = query.getResultList();	
-		return null;
+		Query query = em.createQuery("SELECT v FROM Visite v WHERE v.idVisite= :pIdvisite");
+		query.setParameter("pIdvisite", idVisite);
+		Visite visite = (Visite) query.getSingleResult();	
+		return visite;
 	}
 
 }

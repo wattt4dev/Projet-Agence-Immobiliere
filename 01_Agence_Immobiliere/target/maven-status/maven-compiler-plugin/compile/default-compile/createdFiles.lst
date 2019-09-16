@@ -14,7 +14,9 @@ fr\adaming\rest\ClientRestController.class
 fr\adaming\dao\IVisiteDao.class
 fr\adaming\entity\Alouer.class
 fr\adaming\dao\ICategorieDao.class
+fr\adaming\service\VisiteServiceImpl.class
 fr\adaming\service\ClientServiceImpl.class
+fr\adaming\service\IVisiteService.class
 fr\adaming\entity\BienImmobilier.class
 fr\adaming\dao\ContratDaoImpl.class
 fr\adaming\dao\AgentDaoImpl.class
@@ -31,6 +33,7 @@ fr\adaming\entity\Visite.class
 fr\adaming\service\IClientService.class
 fr\adaming\entity\Aacheter.class
 fr\adaming\rest\ContratRestController.class
+fr\adaming\dao\VisiteDaoImpl.class
 fr\adaming\dao\IClientDao.class
 fr\adaming\entity\Personne.class
 fr\adaming\service\ContratServiceImpl.class

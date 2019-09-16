@@ -22,18 +22,20 @@ public class AgentDaoImplTest {
 	IAgentService aService;
 	
 	@Test
-	void testIsExist1() {
-		Agent a = new Agent("toto", "456789", "a");
+	public void testIsExist1() {
+		Agent a = new Agent("toto", "465789", "a", 1);
+		Agent a1= new Agent("2", "2", "2",2);
+
 		int idExpected= 1;
-		int idObtenu = aService.isExist(a).getIdPersonne();
+		int idObtenu = aService.isExist(a).getIdAgent();
 		
 		assertEquals(idExpected, idObtenu);
 
 	}
 	
 	@Test
-	void testIsExist2() {
-		Agent a = new Agent("toto", "456789", "a");
+	public void testIsExist2() {
+		Agent a = new Agent("toto", "456789", "a",1);
 		String mdpExpected= "a";
 		String mdpObtenu = aService.isExist(a).getMdpAgent();
 		

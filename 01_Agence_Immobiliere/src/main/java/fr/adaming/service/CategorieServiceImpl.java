@@ -4,20 +4,22 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import fr.adaming.dao.ICategorieDao;
 import fr.adaming.entity.Agent;
 import fr.adaming.entity.Categorie;
 
 @Service
+@Transactional
 public class CategorieServiceImpl implements ICategorieService{
 	
 	@Autowired
-	private ICategorieDao categorieDao;
+	ICategorieDao categorieDao;
 
 	@Override
-	public Categorie addCategorie(Categorie c) {
-		return categorieDao.addCategorie(c);
+	public void addCategorie(Categorie c) {
+		categorieDao.addCategorie(c);
 	}
 
 	@Override

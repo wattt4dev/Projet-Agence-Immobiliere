@@ -4,8 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -31,9 +35,18 @@ public class CategorieRestController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/add", produces="application/json", consumes="application/json")
-	public Categorie addCategorieRest(Categorie c) {
-		return categorieService.addCategorie(c);
+	public void addCategorieRest(@RequestBody Categorie c) {
+		categorieService.addCategorie(c);
 	}
 	
+	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	public void deleteCategorie(@PathVariable ("pId") int id) {
+		categorieService.deleteCategorie(id);
+	}
 	
+	@RequestMapping(value="/getCategorie", method=RequestMethod.DELETE)
+	public Categorie getCategorieById(@RequestParam("pId") int id) {
+		return categorieService.getCategorieById(id);
+	}
+
 }

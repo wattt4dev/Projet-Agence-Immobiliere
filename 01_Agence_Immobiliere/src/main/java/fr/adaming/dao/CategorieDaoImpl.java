@@ -36,10 +36,11 @@ public class CategorieDaoImpl implements ICategorieDao{
 		deleteQuery.executeUpdate();
 	}
 
+	@Transactional
 	@Override
 	public void updateCategorie(Categorie c) {
 
-		Query updateQuery = em.createQuery("UPDATE Categorie c SET c.typeCategorie = :pTypeCategorie , c.modeCategorie = :pModeCategorie , c.superficieCategorie = :pSuperficieCategorie, c.nombreDeChambresCategorie = :pNombreDeChambresCategorie WHERE c.idCategorie= :pidCategorie");
+		Query updateQuery = em.createQuery("UPDATE Categorie c SET c.typeCategorie = :pTypeCategorie , c.modeCategorie = :pModeCategorie , c.superficieCategorie = :pSuperficieCategorie, c.nombreDeChambresCategorie = :pNombreDeChambresCategorie WHERE c.idCategorie= :pIdCategorie");
 		// Passage des params
 		updateQuery.setParameter("pTypeCategorie", c.getTypeCategorie());
 		updateQuery.setParameter("pModeCategorie", c.getModeCategorie());
@@ -59,6 +60,7 @@ public class CategorieDaoImpl implements ICategorieDao{
 	@Override
 	public Categorie getCategorieById(int idCategorie) {
 		Query query = em.createQuery("FROM Categorie c WHERE c.idCategorie= :pIdCategorie");
+		query.setParameter("pIdCategorie", idCategorie);
 		Categorie categorie = (Categorie) query.getSingleResult();
 		return categorie;
 	}

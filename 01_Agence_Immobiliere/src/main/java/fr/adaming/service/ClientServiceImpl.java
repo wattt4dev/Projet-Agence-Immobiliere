@@ -16,30 +16,30 @@ public class ClientServiceImpl implements IClientService {
 	private IClientDao clientDao;
 
 	@Override
-	public Client addClient(Client c, Agent a) {
-		return clientDao.addClient(c, a);
+	public void addClient(Client c) {
+		clientDao.addClient(c);
 	}
 
 	@Override
-	public void deleteClient(int idClient, Agent a) {
-		clientDao.deleteClient(idClient, a);
+	public void deleteClient(int idPersonne) {
+		clientDao.deleteClient(idPersonne);
 		
 	}
 
 	@Override
-	public void updateClient(Client c, Agent a) {
-		clientDao.updateClient(c, a);
+	public void updateClient(Client c) {
+		clientDao.updateClient(c);
 		
 	}
 
 	@Override
-	public List<Client> getAllClient(Agent a) {
-		return clientDao.getAllClient(a);
+	public List<Client> getAllClient() {
+		return clientDao.getAllClient();
 	}
 
 	@Override
-	public Client getClientById(int idClient, Agent a) {
-		return clientDao.getClientById(idClient, a);
+	public Client getClientById(int idPersonne) {
+		return clientDao.getClientById(idPersonne);
 	}
 
 }

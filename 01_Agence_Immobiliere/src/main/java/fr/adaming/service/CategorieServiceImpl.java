@@ -11,7 +11,6 @@ import fr.adaming.entity.Agent;
 import fr.adaming.entity.Categorie;
 
 @Service
-@Transactional
 public class CategorieServiceImpl implements ICategorieService{
 	
 	@Autowired

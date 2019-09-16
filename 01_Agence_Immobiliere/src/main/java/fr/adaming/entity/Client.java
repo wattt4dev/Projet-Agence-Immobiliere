@@ -6,17 +6,21 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+
 @Entity
 public class Client extends Personne{
 	
 	// Attributs:
 	private boolean acquereur;
 	private String adresseClient;
-	private int idClient;
 	
 	//Approche UML
 	//One Client to Many BienImmobilier
 	@OneToMany (mappedBy="client", cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<BienImmobilier> listeBienImmobilierClient;
 	
 	// Constructeurs:
@@ -53,13 +57,6 @@ public class Client extends Personne{
 		this.adresseClient = adresseClient;
 	}
 
-	public int getIdClient() {
-		return idClient;
-	}
-
-	public void setIdClient(int idClient) {
-		this.idClient = idClient;
-	}
 
 	public List<BienImmobilier> getListeBienImmobilierClient() {
 		return listeBienImmobilierClient;

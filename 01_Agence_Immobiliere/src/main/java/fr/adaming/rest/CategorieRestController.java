@@ -24,7 +24,7 @@ import fr.adaming.service.ICategorieService;
 public class CategorieRestController {
 	
 	@Autowired
-	private ICategorieService categorieService;
+	ICategorieService categorieService;
 
 	
 	//méthodes 
@@ -44,14 +44,14 @@ public class CategorieRestController {
 		categorieService.deleteCategorie(id);
 	}
 	
-	@RequestMapping(value="/getCategorie/{pId}", method=RequestMethod.GET, produces="application/json" )
-	public Categorie getCategorieById(@RequestParam("pId") int id) {
+	@RequestMapping(value="/getById/{pId}", method=RequestMethod.GET, produces="application/json" )
+	public Categorie getCategorieById(@PathVariable("pId") int id) {
 		return categorieService.getCategorieById(id);
 	}
 	
 	@RequestMapping(value="/update", method=RequestMethod.PUT, consumes="application/json")
-	public void updateCategorie(@RequestParam("pId") int id) {
-		categorieService.getCategorieById(id);
+	public void updateCategorie(@RequestBody Categorie c) {
+		categorieService.updateCategorie(c);
 	}
 
 }

@@ -15,34 +15,34 @@ import fr.adaming.entity.Proprietaire;
 import fr.adaming.service.IProprietaireService;
 
 @RestController
-@RequestMapping("/ws")
+@RequestMapping("/proprietaire")
 @CrossOrigin(origins = "http://localhost:4200") // Pour accepeter les requêtes de angular
 public class ProprietaireRestController {
 
 	@Autowired
 	private IProprietaireService proprietaireService;
 
-	@RequestMapping(value = "listProprietaire", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET, produces = "application/json")
 	public List<Proprietaire> recupListeProprietaire() {
 		return proprietaireService.getAllProprietaire();
 	}
 
-	@RequestMapping(value = "getProprietaire", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/getById", method = RequestMethod.GET, produces = "application/json")
 	public Proprietaire recupProprietaire(@RequestParam(value = "pIdProprietaire") int idProprietaire) {
 		return proprietaireService.getProprietaireById(idProprietaire);
 	}
 
-	@RequestMapping(value = "addProprietaire", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 	public Proprietaire addProprietaire(@RequestBody Proprietaire proprietaireIn) {
 		return proprietaireService.addProprietaire(proprietaireIn);
 	}
 
-	@RequestMapping(value = "deleteProprietaire/{pIdProprietaire}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/delete/{pIdProprietaire}", method = RequestMethod.DELETE)
 	public void deleteProprietaire(@PathVariable("pIdProprietaire") int idProprietaire) {
 		proprietaireService.deleteProprietaire(idProprietaire);
 	}
 
-	@RequestMapping(value = "updateProprietaire", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value = "/update", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
 	public void updateProprietaire(@RequestBody Proprietaire proprietaireIn) {
 		proprietaireService.updateProprietaire(proprietaireIn);
 	}

@@ -79,10 +79,65 @@ public class PDFRestController {
 			// canvas.setTextMatrix(0, 0);
 			// canvas.showText("origine");
 
+			// Calculs:
+			double premierLoyer=l.getChargesALouer()+l.getLoyerALouer();
+			
+			double montantTotal=premierLoyer+l.getCautionALouer();
+			
+			
 			// --------------------CE-----------------------------
 
-			canvas.setTextMatrix(0, 0);
+			canvas.setTextMatrix(380, 270);
 			canvas.showText(Double.toString(l.getCautionALouer()));
+			
+			canvas.setTextMatrix(380, 500);
+			canvas.showText(l.getLocalisationBienImmobilier());
+			
+			canvas.setTextMatrix(265, 758);
+			canvas.showText(l.getDateFactureBienImmobilier());
+			
+			canvas.setTextMatrix(230, 500);
+			canvas.showText(l.getDateFactureBienImmobilier());
+			
+			canvas.setTextMatrix(80, 500);
+			canvas.showText(l.getNumeroAffaireBienImmobilier());
+			
+			canvas.setTextMatrix(178, 758);
+			canvas.showText(l.getNumeroFactureBienImmobilier());
+			
+			canvas.setTextMatrix(280, 413);
+			canvas.showText(l.getTypeDeBienImmobilier());
+			
+			canvas.setTextMatrix(280, 398);
+			canvas.showText(l.getGarnituresALouer());
+			
+			canvas.setTextMatrix(280, 383);
+			canvas.showText(Double.toString(l.getChargesALouer()));
+			
+			canvas.setTextMatrix(280, 368);
+			canvas.showText(Double.toString(l.getLoyerALouer()));
+			
+			canvas.setTextMatrix(280, 368);
+			canvas.showText(Double.toString(l.getLoyerALouer()));
+			
+			canvas.setTextMatrix(380, 255);
+			canvas.showText(Double.toString(premierLoyer));
+			
+			canvas.setTextMatrix(380, 224);
+			canvas.showText(Double.toString(montantTotal));
+			
+			canvas.setTextMatrix(83, 710);
+			canvas.showText(l.getClient().getNomPersonne());
+			
+			canvas.setTextMatrix(83, 670);
+			canvas.showText(l.getClient().getAdresseClient());
+			
+			canvas.setTextMatrix(83, 630);
+			canvas.showText(l.getClient().getTelephonePrive());
+			
+			
+			
+			
 
 			// canvas.setTextMatrix(0, 100);
 			// canvas.showText(Integer.toString(pan.getId()));

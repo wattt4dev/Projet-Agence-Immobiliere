@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -34,6 +35,8 @@ public class BienImmobilier implements Serializable {
 	private Date dateDispoBienImmobilier;
 	private String revenuCadastralBienImmobilier;
 	private String paysBienImmobilier;
+	@Column(name = "photo", columnDefinition="longblob")
+	private byte[] photo;
 	
 	//Approche UML
 	
@@ -73,7 +76,8 @@ public class BienImmobilier implements Serializable {
 
 	public BienImmobilier(String statutBienImmobilier, Date dateSoumissionBienImmobilier,
 			String localisationBienImmobilier, Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
-			String paysBienImmobilier) {
+			String paysBienImmobilier, byte[] photo, List<Visite> listeVisites, Agent agent, Categorie categorie,
+			Client client, Proprietaire proprietaire, Contrat contrat) {
 		super();
 		this.statutBienImmobilier = statutBienImmobilier;
 		this.dateSoumissionBienImmobilier = dateSoumissionBienImmobilier;
@@ -81,11 +85,19 @@ public class BienImmobilier implements Serializable {
 		this.dateDispoBienImmobilier = dateDispoBienImmobilier;
 		this.revenuCadastralBienImmobilier = revenuCadastralBienImmobilier;
 		this.paysBienImmobilier = paysBienImmobilier;
+		this.photo = photo;
+		this.listeVisites = listeVisites;
+		this.agent = agent;
+		this.categorie = categorie;
+		this.client = client;
+		this.proprietaire = proprietaire;
+		this.contrat = contrat;
 	}
-
+	
 	public BienImmobilier(int idBienImmobilier, String statutBienImmobilier, Date dateSoumissionBienImmobilier,
 			String localisationBienImmobilier, Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
-			String paysBienImmobilier) {
+			String paysBienImmobilier, byte[] photo, List<Visite> listeVisites, Agent agent, Categorie categorie,
+			Client client, Proprietaire proprietaire, Contrat contrat) {
 		super();
 		this.idBienImmobilier = idBienImmobilier;
 		this.statutBienImmobilier = statutBienImmobilier;
@@ -94,6 +106,13 @@ public class BienImmobilier implements Serializable {
 		this.dateDispoBienImmobilier = dateDispoBienImmobilier;
 		this.revenuCadastralBienImmobilier = revenuCadastralBienImmobilier;
 		this.paysBienImmobilier = paysBienImmobilier;
+		this.photo = photo;
+		this.listeVisites = listeVisites;
+		this.agent = agent;
+		this.categorie = categorie;
+		this.client = client;
+		this.proprietaire = proprietaire;
+		this.contrat = contrat;
 	}
 
 	// Getters et setters:
@@ -149,8 +168,6 @@ public class BienImmobilier implements Serializable {
 		return paysBienImmobilier;
 	}
 	
-	
-
 	public Categorie getCategorie() {
 		return categorie;
 	}
@@ -194,6 +211,24 @@ public class BienImmobilier implements Serializable {
 	public void setAgent(Agent agent) {
 		this.agent = agent;
 	}
+
+	public byte[] getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
+
+	public Contrat getContrat() {
+		return contrat;
+	}
+
+	public void setContrat(Contrat contrat) {
+		this.contrat = contrat;
+	}
+	
+	
 	
 	
 	

@@ -78,4 +78,5 @@ public class Contrat implements Serializable {
 		this.bienImmobilier = bienImmobilier;
 	}
 
+	
 }

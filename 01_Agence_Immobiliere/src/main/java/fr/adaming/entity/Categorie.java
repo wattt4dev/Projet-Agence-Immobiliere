@@ -1,4 +1,5 @@
 package fr.adaming.entity;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,6 +22,8 @@ public class Categorie implements Serializable {
 	private String modeCategorie;
 	private String superficieCategorie;
 	private int nombreDeChambresCategorie;
+	@Column(name = "photo", columnDefinition="longblob")
+	private byte[] photo;
 	
 	//Approche UML
 	//one categorie to many bienImmobiliers
@@ -33,22 +36,26 @@ public class Categorie implements Serializable {
 	}
 	
 	public Categorie(String typeCategorie, String modeCategorie, String superficieCategorie,
-			int nombreDeChambresCategorie) {
+			int nombreDeChambresCategorie, byte[] photo, List<BienImmobilier> listeBienImmobiliersCategorie) {
 		super();
 		this.typeCategorie = typeCategorie;
 		this.modeCategorie = modeCategorie;
 		this.superficieCategorie = superficieCategorie;
 		this.nombreDeChambresCategorie = nombreDeChambresCategorie;
+		this.photo = photo;
+		this.listeBienImmobiliersCategorie = listeBienImmobiliersCategorie;
 	}
 	
 	public Categorie(int idCategorie, String typeCategorie, String modeCategorie, String superficieCategorie,
-			int nombreDeChambresCategorie) {
+			int nombreDeChambresCategorie, byte[] photo, List<BienImmobilier> listeBienImmobiliersCategorie) {
 		super();
 		this.idCategorie = idCategorie;
 		this.typeCategorie = typeCategorie;
 		this.modeCategorie = modeCategorie;
 		this.superficieCategorie = superficieCategorie;
 		this.nombreDeChambresCategorie = nombreDeChambresCategorie;
+		this.photo = photo;
+		this.listeBienImmobiliersCategorie = listeBienImmobiliersCategorie;
 	}
 
 	// Getters et setters:
@@ -89,6 +96,14 @@ public class Categorie implements Serializable {
 
 	public void setListeBienImmobiliersCategorie(List<BienImmobilier> listeBienImmobiliersCategorie) {
 		this.listeBienImmobiliersCategorie = listeBienImmobiliersCategorie;
+	}
+
+	public byte[] getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
 	}
 	
 	

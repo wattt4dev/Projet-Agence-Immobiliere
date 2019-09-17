@@ -1,6 +1,7 @@
 package fr.adaming.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -20,24 +21,15 @@ public class Alouer extends BienImmobilier{
 	public Alouer() {
 		super();
 	}
+
 	public Alouer(String statutBienImmobilier, Date dateSoumissionBienImmobilier, String localisationBienImmobilier,
-			Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier,
-			double cautionALouer, double loyerALouer, double chargesALouer, String bailALouer,
+			Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier, byte[] photo,
+			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
+			Contrat contrat, double cautionALouer, double loyerALouer, double chargesALouer, String bailALouer,
 			String garnituresALouer) {
 		super(statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier, dateDispoBienImmobilier,
-				revenuCadastralBienImmobilier, paysBienImmobilier);
-		this.cautionALouer = cautionALouer;
-		this.loyerALouer = loyerALouer;
-		this.chargesALouer = chargesALouer;
-		this.bailALouer = bailALouer;
-		this.garnituresALouer = garnituresALouer;
-	}
-	public Alouer(int idBienImmobilier, String statutBienImmobilier, Date dateSoumissionBienImmobilier,
-			String localisationBienImmobilier, Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
-			String paysBienImmobilier, double cautionALouer, double loyerALouer, double chargesALouer,
-			String bailALouer, String garnituresALouer) {
-		super(idBienImmobilier, statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier,
-				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier);
+				revenuCadastralBienImmobilier, paysBienImmobilier, photo, listeVisites, agent, categorie, client,
+				proprietaire, contrat);
 		this.cautionALouer = cautionALouer;
 		this.loyerALouer = loyerALouer;
 		this.chargesALouer = chargesALouer;
@@ -45,6 +37,21 @@ public class Alouer extends BienImmobilier{
 		this.garnituresALouer = garnituresALouer;
 	}
 	
+	public Alouer(int idBienImmobilier, String statutBienImmobilier, Date dateSoumissionBienImmobilier,
+			String localisationBienImmobilier, Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
+			String paysBienImmobilier, byte[] photo, List<Visite> listeVisites, Agent agent, Categorie categorie,
+			Client client, Proprietaire proprietaire, Contrat contrat, double cautionALouer, double loyerALouer,
+			double chargesALouer, String bailALouer, String garnituresALouer) {
+		super(idBienImmobilier, statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier,
+				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier, photo, listeVisites, agent,
+				categorie, client, proprietaire, contrat);
+		this.cautionALouer = cautionALouer;
+		this.loyerALouer = loyerALouer;
+		this.chargesALouer = chargesALouer;
+		this.bailALouer = bailALouer;
+		this.garnituresALouer = garnituresALouer;
+	}
+
 	// Getters et setters:
 	public double getCautionALouer() {
 		return cautionALouer;

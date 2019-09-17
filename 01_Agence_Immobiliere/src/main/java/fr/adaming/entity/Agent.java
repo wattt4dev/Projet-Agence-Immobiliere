@@ -50,6 +50,14 @@ public class Agent extends Personne  {
 	public void setIdAgent(int idAgent) {
 		this.idAgent = idAgent;
 	}
+
+	public List<BienImmobilier> getBienImmobiliers() {
+		return bienImmobiliers;
+	}
+
+	public void setBienImmobiliers(List<BienImmobilier> bienImmobiliers) {
+		this.bienImmobiliers = bienImmobiliers;
+	}
 	
 	
 

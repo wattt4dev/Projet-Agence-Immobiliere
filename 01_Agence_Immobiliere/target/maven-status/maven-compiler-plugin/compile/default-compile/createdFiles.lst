@@ -43,6 +43,7 @@ fr\adaming\entity\Agent.class
 fr\adaming\rest\AAcheterRestController.class
 fr\adaming\rest\ContratRestController.class
 fr\adaming\dao\VisiteDaoImpl.class
+fr\adaming\rest\PDFRestController.class
 fr\adaming\entity\Personne.class
 fr\adaming\service\ContratServiceImpl.class
 fr\adaming\dao\ALouerDaoImpl.class

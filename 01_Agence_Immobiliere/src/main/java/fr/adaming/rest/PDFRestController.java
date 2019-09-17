@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itextpdf.io.font.FontProgram;
@@ -31,11 +32,10 @@ public class PDFRestController {
 	@Autowired
 	IAlouerDao lService;
 	
+	//@RequestMapping(value = "/alouer", method = RequestMethod.GET)
 	@RequestMapping(value = "/alouer", method = RequestMethod.GET)
-	//@RequestMapping(value = "/{alouerId}", method = RequestMethod.GET)
-
-	//protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response,@PathVariable("alouerId") int louerId) throws Exception {
-		protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	//protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response,@RequestParam("pId") int louerId) throws Exception {
+    protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		 //Alouer l = lService.getAlouerById(louerId);
 		

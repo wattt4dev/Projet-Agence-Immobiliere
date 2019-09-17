@@ -1,6 +1,7 @@
 package fr.adaming.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -19,19 +20,24 @@ public class Aacheter extends BienImmobilier {
 	}
 
 	public Aacheter(String statutBienImmobilier, Date dateSoumissionBienImmobilier, String localisationBienImmobilier,
-			Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier,
-			double prixDemandeAAcheter, String etatAAcheter) {
+			Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier, byte[] photo,
+			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
+			Contrat contrat, double prixDemandeAAcheter, String etatAAcheter) {
 		super(statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier, dateDispoBienImmobilier,
-				revenuCadastralBienImmobilier, paysBienImmobilier);
+				revenuCadastralBienImmobilier, paysBienImmobilier, photo, listeVisites, agent, categorie, client,
+				proprietaire, contrat);
 		this.prixDemandeAAcheter = prixDemandeAAcheter;
 		this.etatAAcheter = etatAAcheter;
 	}
 
 	public Aacheter(int idBienImmobilier, String statutBienImmobilier, Date dateSoumissionBienImmobilier,
 			String localisationBienImmobilier, Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
-			String paysBienImmobilier, double prixDemandeAAcheter, String etatAAcheter) {
+			String paysBienImmobilier, byte[] photo, List<Visite> listeVisites, Agent agent, Categorie categorie,
+			Client client, Proprietaire proprietaire, Contrat contrat, double prixDemandeAAcheter,
+			String etatAAcheter) {
 		super(idBienImmobilier, statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier,
-				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier);
+				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier, photo, listeVisites, agent,
+				categorie, client, proprietaire, contrat);
 		this.prixDemandeAAcheter = prixDemandeAAcheter;
 		this.etatAAcheter = etatAAcheter;
 	}
@@ -53,4 +59,5 @@ public class Aacheter extends BienImmobilier {
 		this.etatAAcheter = etatAAcheter;
 	}
 
+	
 }

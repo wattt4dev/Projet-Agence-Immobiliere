@@ -77,5 +77,7 @@ public class Personne implements Serializable{
 	public void setTelephonePrive(String telephonePrive) {
 		this.telephonePrive = telephonePrive;
 	}
+	
+	
 
 }

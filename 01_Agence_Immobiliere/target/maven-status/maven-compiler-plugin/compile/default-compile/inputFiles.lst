@@ -22,6 +22,7 @@ C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\IALouerService.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ALouerDaoImpl.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ClientServiceImpl.java
+C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\AgentRestController.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\ContratRestController.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Aacheter.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\ICategorieService.java
@@ -41,6 +42,7 @@ C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\ICategorieDao.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\CategorieServiceImpl.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IVisiteDao.java
+C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\rest\VisiteRestController.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\service\AgentServiceImpl.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\entity\Agent.java
 C:\Users\IN-BR-009\git\wattt4dev\Projet-Agence-Immobiliere\01_Agence_Immobiliere\src\main\java\fr\adaming\dao\IContratDao.java

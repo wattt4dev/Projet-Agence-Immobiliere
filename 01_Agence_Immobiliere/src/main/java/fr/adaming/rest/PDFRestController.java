@@ -23,6 +23,7 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
 import fr.adaming.dao.IAlouerDao;
 import fr.adaming.entity.Alouer;
+import fr.adaming.service.IALouerService;
 
 @RestController
 @RequestMapping("/pdf")
@@ -30,7 +31,7 @@ import fr.adaming.entity.Alouer;
 public class PDFRestController {
 
 	@Autowired
-	IAlouerDao lService;
+	IALouerService lService;
 	
 	//@RequestMapping(value = "/alouer", method = RequestMethod.GET)
 	@RequestMapping(value = "/alouer/{pId}", method = RequestMethod.GET)

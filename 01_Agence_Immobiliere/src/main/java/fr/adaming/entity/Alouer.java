@@ -22,8 +22,8 @@ public class Alouer extends BienImmobilier{
 		super();
 	}
 
-	public Alouer(String statutBienImmobilier, Date dateSoumissionBienImmobilier, String localisationBienImmobilier,
-			Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier, byte[] photo,
+	public Alouer(String statutBienImmobilier, String dateSoumissionBienImmobilier, String localisationBienImmobilier,
+			String dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier, byte[] photo,
 			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
 			Contrat contrat, double cautionALouer, double loyerALouer, double chargesALouer, String bailALouer,
 			String garnituresALouer) {
@@ -37,8 +37,8 @@ public class Alouer extends BienImmobilier{
 		this.garnituresALouer = garnituresALouer;
 	}
 	
-	public Alouer(int idBienImmobilier, String statutBienImmobilier, Date dateSoumissionBienImmobilier,
-			String localisationBienImmobilier, Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
+	public Alouer(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
+			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, List<Visite> listeVisites, Agent agent, Categorie categorie,
 			Client client, Proprietaire proprietaire, Contrat contrat, double cautionALouer, double loyerALouer,
 			double chargesALouer, String bailALouer, String garnituresALouer) {

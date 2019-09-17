@@ -19,8 +19,8 @@ public class Aacheter extends BienImmobilier {
 		super();
 	}
 
-	public Aacheter(String statutBienImmobilier, Date dateSoumissionBienImmobilier, String localisationBienImmobilier,
-			Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier, byte[] photo,
+	public Aacheter(String statutBienImmobilier, String dateSoumissionBienImmobilier, String localisationBienImmobilier,
+			String dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier, byte[] photo,
 			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
 			Contrat contrat, double prixDemandeAAcheter, String etatAAcheter) {
 		super(statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier, dateDispoBienImmobilier,
@@ -30,8 +30,8 @@ public class Aacheter extends BienImmobilier {
 		this.etatAAcheter = etatAAcheter;
 	}
 
-	public Aacheter(int idBienImmobilier, String statutBienImmobilier, Date dateSoumissionBienImmobilier,
-			String localisationBienImmobilier, Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
+	public Aacheter(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
+			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, List<Visite> listeVisites, Agent agent, Categorie categorie,
 			Client client, Proprietaire proprietaire, Contrat contrat, double prixDemandeAAcheter,
 			String etatAAcheter) {

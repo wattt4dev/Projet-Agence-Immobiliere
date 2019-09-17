@@ -33,11 +33,11 @@ public class PDFRestController {
 	IAlouerDao lService;
 	
 	//@RequestMapping(value = "/alouer", method = RequestMethod.GET)
-	@RequestMapping(value = "/alouer", method = RequestMethod.GET)
-	//protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response,@RequestParam("pId") int louerId) throws Exception {
-    protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value = "/alouer/{pId}", method = RequestMethod.GET)
+	protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response,@PathVariable("pId") int louerId) throws Exception {
+    //protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		 //Alouer l = lService.getAlouerById(louerId);
+		 Alouer l = lService.getAlouerById(louerId);
 		
 			
 
@@ -78,13 +78,13 @@ public class PDFRestController {
 			// Commencer l'écriture dans le pdf
 			canvas.beginText();
 
-			 canvas.setTextMatrix(0, 0);
-			 canvas.showText("origine");
+		//	 canvas.setTextMatrix(0, 0);
+		//	 canvas.showText("origine");
 
 								// --------------------CE-----------------------------
 
-	//		canvas.setTextMatrix(0, 0);
-	//		canvas.showText(Double.toString(prix));
+			canvas.setTextMatrix(0, 0);
+			canvas.showText(Double.toString(l.getCautionALouer()));
 			
 	//		canvas.setTextMatrix(0, 100);
 	//		canvas.showText(Integer.toString(pan.getId()));

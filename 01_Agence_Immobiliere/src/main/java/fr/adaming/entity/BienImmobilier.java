@@ -30,9 +30,9 @@ public class BienImmobilier implements Serializable {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int idBienImmobilier;
 	private String statutBienImmobilier;
-	private Date dateSoumissionBienImmobilier;
+	private String dateSoumissionBienImmobilier;
 	private String localisationBienImmobilier;
-	private Date dateDispoBienImmobilier;
+	private String dateDispoBienImmobilier;
 	private String revenuCadastralBienImmobilier;
 	private String paysBienImmobilier;
 	@Column(name = "photo", columnDefinition="longblob")
@@ -74,8 +74,8 @@ public class BienImmobilier implements Serializable {
 		super();
 	}
 
-	public BienImmobilier(String statutBienImmobilier, Date dateSoumissionBienImmobilier,
-			String localisationBienImmobilier, Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
+	public BienImmobilier(String statutBienImmobilier, String dateSoumissionBienImmobilier,
+			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, List<Visite> listeVisites, Agent agent, Categorie categorie,
 			Client client, Proprietaire proprietaire, Contrat contrat) {
 		super();
@@ -94,8 +94,8 @@ public class BienImmobilier implements Serializable {
 		this.contrat = contrat;
 	}
 	
-	public BienImmobilier(int idBienImmobilier, String statutBienImmobilier, Date dateSoumissionBienImmobilier,
-			String localisationBienImmobilier, Date dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
+	public BienImmobilier(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
+			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, List<Visite> listeVisites, Agent agent, Categorie categorie,
 			Client client, Proprietaire proprietaire, Contrat contrat) {
 		super();
@@ -132,11 +132,11 @@ public class BienImmobilier implements Serializable {
 		this.statutBienImmobilier = statutBienImmobilier;
 	}
 
-	public Date getDateSoumissionBienImmobilier() {
+	public String getDateSoumissionBienImmobilier() {
 		return dateSoumissionBienImmobilier;
 	}
 
-	public void setDateSoumissionBienImmobilier(Date dateSoumissionBienImmobilier) {
+	public void setDateSoumissionBienImmobilier(String dateSoumissionBienImmobilier) {
 		this.dateSoumissionBienImmobilier = dateSoumissionBienImmobilier;
 	}
 
@@ -148,11 +148,11 @@ public class BienImmobilier implements Serializable {
 		this.localisationBienImmobilier = localisationBienImmobilier;
 	}
 
-	public Date getDateDispoBienImmobilier() {
+	public String getDateDispoBienImmobilier() {
 		return dateDispoBienImmobilier;
 	}
 
-	public void setDateDispoBienImmobilier(Date dateDispoBienImmobilier) {
+	public void setDateDispoBienImmobilier(String dateDispoBienImmobilier) {
 		this.dateDispoBienImmobilier = dateDispoBienImmobilier;
 	}
 

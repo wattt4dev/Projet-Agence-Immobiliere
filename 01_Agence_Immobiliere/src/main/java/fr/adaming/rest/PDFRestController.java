@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itextpdf.io.font.FontProgram;
@@ -21,26 +20,25 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
-import fr.adaming.dao.IAlouerDao;
 import fr.adaming.entity.Alouer;
 import fr.adaming.service.IALouerService;
 
 @RestController
 @RequestMapping("/pdf")
-@CrossOrigin(origins= {"http://localhost:4200"})
+@CrossOrigin(origins = { "http://localhost:4200" })
 public class PDFRestController {
 
 	@Autowired
 	IALouerService lService;
-	
-	//@RequestMapping(value = "/alouer", method = RequestMethod.GET)
-	@RequestMapping(value = "/alouer/{pId}", method = RequestMethod.GET)
-	protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response,@PathVariable("pId") int louerId) throws Exception {
-    //protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		 Alouer l = lService.getAlouerById(louerId);
-		
-			
+	// @RequestMapping(value = "/alouer", method = RequestMethod.GET)
+	@RequestMapping(value = "/alouer/{pId}", method = RequestMethod.GET)
+	protected void handleRequestInternal(HttpServletRequest request, HttpServletResponse response,
+			@PathVariable("pId") int louerId) throws Exception {
+		// protected void handleRequestInternal(HttpServletRequest request,
+		// HttpServletResponse response) throws Exception {
+
+		Alouer l = lService.getAlouerByIdService(louerId);
 
 		// ____________________________________PDF___________________________________________
 
@@ -48,8 +46,7 @@ public class PDFRestController {
 		String masterPath = request.getServletContext().getRealPath("/WEB-INF/FactureLocation.pdf");
 		// Spécifier que la reponse sera de type pdf
 		response.setContentType("application/pdf");
-	
-		
+
 		try (
 				// Note : les outils ouverts dans ce try seront automatiquement fermés
 
@@ -79,24 +76,22 @@ public class PDFRestController {
 			// Commencer l'écriture dans le pdf
 			canvas.beginText();
 
-		//	 canvas.setTextMatrix(0, 0);
-		//	 canvas.showText("origine");
+			// canvas.setTextMatrix(0, 0);
+			// canvas.showText("origine");
 
-								// --------------------CE-----------------------------
+			// --------------------CE-----------------------------
 
 			canvas.setTextMatrix(0, 0);
 			canvas.showText(Double.toString(l.getCautionALouer()));
-			
-	//		canvas.setTextMatrix(0, 100);
-	//		canvas.showText(Integer.toString(pan.getId()));
 
+			// canvas.setTextMatrix(0, 100);
+			// canvas.showText(Integer.toString(pan.getId()));
 
 			// Finir l'écriture dans le pdf
 			canvas.endText();
 
 		}
 
-
 	}
-	
+
 }

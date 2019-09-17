@@ -1,7 +1,6 @@
 package fr.adaming.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -275,7 +274,5 @@ public class BienImmobilier implements Serializable {
 	public void setContrat(Contrat contrat) {
 		this.contrat = contrat;
 	}
-
-
 
 }

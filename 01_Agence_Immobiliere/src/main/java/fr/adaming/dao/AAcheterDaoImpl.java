@@ -31,7 +31,7 @@ public class AAcheterDaoImpl implements IAAcheterDao{
 
 	@Override
 	public void updateAacheter(Aacheter achat) {
-		Query updateQuery = em.createQuery("UPDATE Aacheter achat SET achat.statutBienImmobilier = :pStatutBienImmobilier , achat.dateSoumissionBienImmobilier = :pDateSoumissionBienImmobilier , achat.localisationBienImmobilier = :pLocalisationBienImmobilier , achat.dateDispoBienImmobilier = :pDateDispoBienImmobilier , achat.revenuCadastralBienImmobilier = :pRevenuCadastralBienImmobilier , achat.paysBienImmobilier = :pPaysBienImmobilier , achat.prixDemandeAAcheter = :pPrixDemandeAAcheter , achat.etatAAcheter = :pEtatAAcheter  WHERE achat.idBienImmobilier= :pIdBienImmobilier");
+		Query updateQuery = em.createQuery("UPDATE Aacheter achat SET achat.statutBienImmobilier = :pStatutBienImmobilier , achat.dateSoumissionBienImmobilier = :pDateSoumissionBienImmobilier , achat.localisationBienImmobilier = :pLocalisationBienImmobilier , achat.dateDispoBienImmobilier = :pDateDispoBienImmobilier , achat.revenuCadastralBienImmobilier = :pRevenuCadastralBienImmobilier , achat.paysBienImmobilier = :pPaysBienImmobilier , achat.prixDemandeAAcheter = :pPrixDemandeAAcheter , achat.etatAAcheter = :pEtatAAcheter , al.numeroFactureBienImmobilier = :pNumeroFactureBienImmobilier , al.dateFactureBienImmobilier = :pDateFactureBienImmobilier , al.numeroAffaireBienImmobilier = :pNumeroAffaireBienImmobilier , al.typeDeBienImmobilier = :pTypeDeBienImmobilier WHERE achat.idBienImmobilier= :pIdBienImmobilier");
 		// Passage des params
 		updateQuery.setParameter("pStatutBienImmobilier", achat.getStatutBienImmobilier());
 		updateQuery.setParameter("pDateSoumissionBienImmobilier", achat.getDateSoumissionBienImmobilier());
@@ -42,6 +42,10 @@ public class AAcheterDaoImpl implements IAAcheterDao{
 		updateQuery.setParameter("pIdBienImmobilier", achat.getIdBienImmobilier());
 		updateQuery.setParameter("pPrixDemandeAAcheter", achat.getPrixDemandeAAcheter());
 		updateQuery.setParameter("pEtatAAcheter", achat.getEtatAAcheter());
+		updateQuery.setParameter("pNumeroFactureBienImmobilier", achat.getNumeroFactureBienImmobilier());
+		updateQuery.setParameter("pDateFactureBienImmobilier", achat.getDateFactureBienImmobilier());
+		updateQuery.setParameter("pNumeroAffaireBienImmobilier", achat.getNumeroAffaireBienImmobilier());
+		updateQuery.setParameter("pTypeDeBienImmobilier", achat.getTypeDeBienImmobilier());
 		updateQuery.executeUpdate();
 		
 	}

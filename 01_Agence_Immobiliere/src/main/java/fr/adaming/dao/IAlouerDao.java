@@ -12,6 +12,6 @@ public interface IAlouerDao {
 	public void updateAlouer(Alouer al);
 	public List<Alouer> getAllAlouer();
 	public Alouer getAlouerById(int idBienImmobilier);
-	public List<Alouer> getAlouerByDepartement(String departement);
+	//public List<Alouer> getAlouerByDepartement(String departement);
 
 }

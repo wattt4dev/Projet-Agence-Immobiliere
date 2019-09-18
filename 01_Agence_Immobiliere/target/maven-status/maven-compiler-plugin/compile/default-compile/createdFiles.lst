@@ -1,6 +1,5 @@
 fr\adaming\dao\ClientDaoImpl.class
 fr\adaming\rest\PDFAvendreRestController.class
-fr\adaming\dao\ProprietaireDaoImpl.class
 fr\adaming\service\AgentServiceImpl.class
 fr\adaming\service\CategorieServiceImpl.class
 fr\adaming\service\ICategorieService.class
@@ -49,4 +48,3 @@ fr\adaming\dao\VisiteDaoImpl.class
 fr\adaming\rest\PDFRestController.class
 fr\adaming\entity\Personne.class
 fr\adaming\service\ContratServiceImpl.class
-fr\adaming\dao\ALouerDaoImpl.class

@@ -15,7 +15,6 @@ import fr.adaming.service.IALouerService;
 
 @RestController
 @RequestMapping("/aLouer")
-@CrossOrigin(origins= {"http://localhost:4200"})
 public class ALouerRestController {
 	
 	@Autowired

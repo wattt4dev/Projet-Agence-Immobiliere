@@ -170,6 +170,13 @@
 			<version>2.7.3</version>
 		</dependency>
 
+<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
+<dependency>
+    <groupId>org.apache.tomcat</groupId>
+    <artifactId>tomcat-catalina</artifactId>
+    <version>7.0.72</version>
+</dependency>
+
 
 	</dependencies>
 

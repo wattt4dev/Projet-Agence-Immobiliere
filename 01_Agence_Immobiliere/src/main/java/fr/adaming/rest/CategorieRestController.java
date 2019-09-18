@@ -20,7 +20,6 @@ import fr.adaming.service.ICategorieService;
 
 @RestController
 @RequestMapping("/categorie")
-@CrossOrigin(origins= {"http://localhost:4200"})
 public class CategorieRestController {
 	
 	@Autowired

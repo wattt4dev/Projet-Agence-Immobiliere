@@ -17,7 +17,6 @@ import fr.adaming.service.IClientService;
 
 @RestController
 @RequestMapping("/client")
-@CrossOrigin(origins= {"http://localhost:4200"})
 public class ClientRestController {
 	
 	@Autowired

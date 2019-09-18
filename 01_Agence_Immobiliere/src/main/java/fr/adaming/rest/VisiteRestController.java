@@ -15,7 +15,6 @@ import fr.adaming.service.IVisiteService;
 
 @RestController
 @RequestMapping("/visite")
-@CrossOrigin(origins= {"http://localhost:4200"})
 public class VisiteRestController {
 	
 	@Autowired

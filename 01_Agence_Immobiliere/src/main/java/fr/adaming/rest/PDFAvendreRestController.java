@@ -26,7 +26,6 @@ import fr.adaming.service.IAAcheterService;
 
 @RestController
 @RequestMapping("/pdf")
-@CrossOrigin(origins= {"http://localhost:4200"})
 public class PDFAvendreRestController {
 	
 	@Autowired

@@ -15,7 +15,6 @@ import fr.adaming.service.IContratService;
 
 @RestController
 @RequestMapping("/contrat")
-@CrossOrigin(origins= {"http://localhost:4200"})
 public class ContratRestController {
 	
 	@Autowired

@@ -26,7 +26,6 @@ import fr.adaming.entity.Alouer;
 
 @RestController
 @RequestMapping("/pdf")
-@CrossOrigin(origins= {"http://localhost:4200"})
 public class PDFRestController {
 
 	@Autowired

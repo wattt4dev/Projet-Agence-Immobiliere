@@ -21,11 +21,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
-<<<<<<< HEAD
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-=======
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
->>>>>>> branch 'master' of https://github.com/wattt4dev/Projet-Agence-Immobiliere.git
 public class BienImmobilier implements Serializable {
 
 	// Attributs:

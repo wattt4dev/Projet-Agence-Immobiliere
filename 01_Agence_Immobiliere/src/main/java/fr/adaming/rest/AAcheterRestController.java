@@ -20,7 +20,7 @@ public class AAcheterRestController {
 	@Autowired
 	IAAcheterService aAcheterService;
 
-	@RequestMapping(method = RequestMethod.POST, value = "/add", consumes = "application/json")
+	@RequestMapping( value = "/add", method = RequestMethod.POST, consumes = "application/json")
 	public void addAAcheterRest(@RequestBody Aacheter aAcheter) {
 		aAcheterService.addAacheter(aAcheter);
 	}

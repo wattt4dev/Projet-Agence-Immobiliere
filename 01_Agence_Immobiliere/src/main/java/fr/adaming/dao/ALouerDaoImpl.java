@@ -32,7 +32,7 @@ public class ALouerDaoImpl implements IAlouerDao {
 
 	@Override
 	public void updateAlouer(Alouer al) {
-		Query updateQuery = em.createQuery("UPDATE Alouer al SET al.statutBienImmobilier = :pStatutBienImmobilier , al.dateSoumissionBienImmobilier = :pDateSoumissionBienImmobilier , al.localisationBienImmobilier = :pLocalisationBienImmobilier , al.dateDispoBienImmobilier = :pDateDispoBienImmobilier , al.revenuCadastralBienImmobilier = :pRevenuCadastralBienImmobilier , al.paysBienImmobilier = :pPaysBienImmobilier , al.cautionALouer = :pCautionALouer , al.loyerALouer = :pLoyerALouer , al.chargesALouer = :pChargesALouer , al.bailALouer = :pBailALouer , al.garnituresALouer = :pGarnituresALouer  WHERE al.idBienImmobilier= :pIdBienImmobilier");
+		Query updateQuery = em.createQuery("UPDATE Alouer al SET al.statutBienImmobilier = :pStatutBienImmobilier , al.dateSoumissionBienImmobilier = :pDateSoumissionBienImmobilier , al.localisationBienImmobilier = :pLocalisationBienImmobilier , al.dateDispoBienImmobilier = :pDateDispoBienImmobilier , al.revenuCadastralBienImmobilier = :pRevenuCadastralBienImmobilier , al.paysBienImmobilier = :pPaysBienImmobilier , al.cautionALouer = :pCautionALouer , al.loyerALouer = :pLoyerALouer , al.chargesALouer = :pChargesALouer , al.bailALouer = :pBailALouer , al.garnituresALouer = :pGarnituresALouer , al.numeroFactureBienImmobilier = :pNumeroFactureBienImmobilier , al.dateFactureBienImmobilier = :pDateFactureBienImmobilier , al.numeroAffaireBienImmobilier = :pNumeroAffaireBienImmobilier , al.typeDeBienImmobilier = :pTypeDeBienImmobilier  WHERE al.idBienImmobilier= :pIdBienImmobilier");
 		// Passage des params
 		updateQuery.setParameter("pStatutBienImmobilier", al.getStatutBienImmobilier());
 		updateQuery.setParameter("pDateSoumissionBienImmobilier", al.getDateSoumissionBienImmobilier());
@@ -46,6 +46,10 @@ public class ALouerDaoImpl implements IAlouerDao {
 		updateQuery.setParameter("pBailALouer", al.getBailALouer());
 		updateQuery.setParameter("pGarnituresALouer", al.getGarnituresALouer());
 		updateQuery.setParameter("pIdBienImmobilier", al.getIdBienImmobilier());
+		updateQuery.setParameter("pNumeroFactureBienImmobilier", al.getNumeroFactureBienImmobilier());
+		updateQuery.setParameter("pDateFactureBienImmobilier", al.getDateFactureBienImmobilier());
+		updateQuery.setParameter("pNumeroAffaireBienImmobilier", al.getNumeroAffaireBienImmobilier());
+		updateQuery.setParameter("pTypeDeBienImmobilier", al.getTypeDeBienImmobilier());
 		updateQuery.executeUpdate();
 	}
 

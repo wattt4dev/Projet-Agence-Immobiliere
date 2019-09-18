@@ -77,13 +77,80 @@ public class PDFAvendreRestController {
 				// Commencer l'écriture dans le pdf
 				canvas.beginText();
 
-		//		 canvas.setTextMatrix(0, 0);
-		//		 canvas.showText("origine");
+//				 canvas.setTextMatrix(0, 0);
+//				 canvas.showText("origine");
 
-									// --------------------CE-----------------------------
+				// --------------------CE-----------------------------
+				
+				//Facture numero
+				canvas.setTextMatrix(178, 758);
+				canvas.showText(l.getNumeroFactureBienImmobilier());
+				
+				//Date 
+				canvas.setTextMatrix(265, 758);
+				canvas.showText(l.getDateSoumissionBienImmobilier());
+				
+				//IdClient
+				canvas.setTextMatrix(120, 730);
+				canvas.showText(Double.toString(l.getClient().getIdPersonne()));
 
-				canvas.setTextMatrix(0, 0);
+				//Nom Client
+				canvas.setTextMatrix(130, 703);
+				canvas.showText(l.getClient().getNomPersonne());
+				
+				//Adresse client
+				canvas.setTextMatrix(115, 675);
+				canvas.showText(l.getClient().getAdresseClient());
+				
+				//Telephne client
+				canvas.setTextMatrix(170, 634);
+				canvas.showText(l.getClient().getTelephonePrive());
+			
+				//Affaire
+				canvas.setTextMatrix(80, 500);
+				canvas.showText(l.getNumeroAffaireBienImmobilier());
+				
+				//Effectuee 
+				canvas.setTextMatrix(230, 500);
+				canvas.showText(l.getDateFactureBienImmobilier());
+				
+				//Adressse du bien 
+				canvas.setTextMatrix(380, 500);
+				canvas.showText(l.getLocalisationBienImmobilier());
+				
+				//Type de bien 
+				canvas.setTextMatrix(147, 415);
+				canvas.showText(l.getTypeDeBienImmobilier());
+				
+				//Superficie minimale
+				canvas.setTextMatrix(170, 399);
+				canvas.showText(l.getCategorie().getSuperficieCategorie());
+				
+				//Nombre de pieces
+				//canvas.setTextMatrix(0, 0);
+				
+				
+				//Etat
+				canvas.setTextMatrix(98, 368);
+				canvas.showText(l.getEtatAAcheter());
+				
+				//Date de disponibilité 
+				canvas.setTextMatrix(172, 352);
+				canvas.showText(l.getDateDispoBienImmobilier());
+				
+				//Prix demander
+				canvas.setTextMatrix(435, 255);
 				canvas.showText(Double.toString(l.getPrixDemandeAAcheter()));
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
 				
 		//		canvas.setTextMatrix(0, 100);
 		//		canvas.showText(Integer.toString(pan.getId()));

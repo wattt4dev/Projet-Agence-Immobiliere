@@ -68,4 +68,14 @@ public class ALouerDaoImpl implements IAlouerDao {
 		return aLouer;
 	}
 
+//	@Override
+//	public List<Alouer> getAlouerByDepartement(String departement) {
+//		Query query = em.createQuery("FROM Alouer al WHERE al.idBienImmobilier = :pIdBienImmobilier");
+//		query.setParameter("pIdBienImmobilier", departement);
+//		Alouer aLouer = (Alouer) query.getSingleResult();
+//		return aLouer;
+//	}
+	
+	
+
 }

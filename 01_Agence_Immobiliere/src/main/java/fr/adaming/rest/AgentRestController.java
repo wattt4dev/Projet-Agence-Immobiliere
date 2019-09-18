@@ -12,7 +12,6 @@ import fr.adaming.service.IAgentService;
 
 @RestController
 @RequestMapping("/agent")
-@CrossOrigin(origins= {"http://localhost:4200"})
 public class AgentRestController {
 	
 	@Autowired

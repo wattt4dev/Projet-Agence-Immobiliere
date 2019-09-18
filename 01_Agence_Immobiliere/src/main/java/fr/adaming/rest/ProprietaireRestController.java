@@ -16,7 +16,6 @@ import fr.adaming.service.IProprietaireService;
 
 @RestController
 @RequestMapping("/proprietaire")
-@CrossOrigin(origins = "http://localhost:4200") // Pour accepeter les requêtes de angular
 public class ProprietaireRestController {
 
 	@Autowired

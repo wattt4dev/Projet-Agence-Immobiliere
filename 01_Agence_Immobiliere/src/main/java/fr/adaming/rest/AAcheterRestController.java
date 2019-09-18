@@ -15,7 +15,6 @@ import fr.adaming.service.IAAcheterService;
 
 @RestController
 @RequestMapping("/aAcheter")
-@CrossOrigin(origins = { "http://localhost:4200" })
 public class AAcheterRestController {
 
 	@Autowired

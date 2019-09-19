@@ -20,8 +20,12 @@ public class VisiteDaoImpl implements IVisiteDao {
 	
 	@Transactional
 	@Override
-	public void addVisite(Visite v) {
-		em.persist(v);	
+	public void addVisite(Visite v, String type, int idImmo) {
+		// em.persist(v);
+		Query addQuery = em.createNativeQuery("INSERT INTO Visite (dateVisite, id_BienImmobilier) values (?,?)");
+		addQuery.setParameter(1, v.getDateVisite());
+		addQuery.setParameter(2, idImmo);
+		addQuery.executeUpdate();
 	}
 
 	@Transactional

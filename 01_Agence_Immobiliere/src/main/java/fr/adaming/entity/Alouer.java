@@ -3,11 +3,12 @@ package fr.adaming.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="aLouer")
+@DiscriminatorValue("location")
 public class Alouer extends BienImmobilier{
 	
 	// Attributs:

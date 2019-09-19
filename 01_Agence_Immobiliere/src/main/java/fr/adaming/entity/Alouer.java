@@ -37,7 +37,7 @@ public class Alouer extends BienImmobilier{
 		super(idBienImmobilier, statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier,
 				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier, photo,
 				numeroFactureBienImmobilier, dateFactureBienImmobilier, numeroAffaireBienImmobilier,
-				typeDeBienImmobilier, listeVisites, agent, categorie, client, proprietaire, contrat);
+				typeDeBienImmobilier, garnituresALouer, listeVisites, agent, categorie, client, proprietaire, contrat);
 		this.cautionALouer = cautionALouer;
 		this.loyerALouer = loyerALouer;
 		this.chargesALouer = chargesALouer;
@@ -57,7 +57,7 @@ public class Alouer extends BienImmobilier{
 			double loyerALouer, double chargesALouer, String bailALouer, String garnituresALouer) {
 		super(statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier, dateDispoBienImmobilier,
 				revenuCadastralBienImmobilier, paysBienImmobilier, photo, numeroFactureBienImmobilier,
-				dateFactureBienImmobilier, numeroAffaireBienImmobilier, typeDeBienImmobilier, listeVisites, agent,
+				dateFactureBienImmobilier, numeroAffaireBienImmobilier, typeDeBienImmobilier, garnituresALouer, listeVisites, agent,
 				categorie, client, proprietaire, contrat);
 		this.cautionALouer = cautionALouer;
 		this.loyerALouer = loyerALouer;

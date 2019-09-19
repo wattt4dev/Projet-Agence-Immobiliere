@@ -32,7 +32,7 @@ public class Aacheter extends BienImmobilier {
 			String etatAAcheter) {
 		super(statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier, dateDispoBienImmobilier,
 				revenuCadastralBienImmobilier, paysBienImmobilier, photo, numeroFactureBienImmobilier,
-				dateFactureBienImmobilier, numeroAffaireBienImmobilier, typeDeBienImmobilier, listeVisites, agent,
+				dateFactureBienImmobilier, numeroAffaireBienImmobilier, typeDeBienImmobilier, etatAAcheter, listeVisites, agent,
 				categorie, client, proprietaire, contrat);
 		this.prixDemandeAAcheter = prixDemandeAAcheter;
 		this.etatAAcheter = etatAAcheter;
@@ -52,7 +52,7 @@ public class Aacheter extends BienImmobilier {
 		super(idBienImmobilier, statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier,
 				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier, photo,
 				numeroFactureBienImmobilier, dateFactureBienImmobilier, numeroAffaireBienImmobilier,
-				typeDeBienImmobilier, listeVisites, agent, categorie, client, proprietaire, contrat);
+				typeDeBienImmobilier, etatAAcheter, listeVisites, agent, categorie, client, proprietaire, contrat);
 		this.prixDemandeAAcheter = prixDemandeAAcheter;
 		this.etatAAcheter = etatAAcheter;
 	}

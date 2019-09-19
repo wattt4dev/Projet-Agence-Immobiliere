@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.adaming.entity.Aacheter;
+import fr.adaming.entity.Alouer;
 import fr.adaming.service.IAAcheterService;
 
 @RestController
@@ -45,6 +46,17 @@ public class AAcheterRestController {
 	@RequestMapping(method = RequestMethod.GET, value = "/getById/{pId}", produces = "application/json")
 	public Aacheter getByIdAAcheterRest(@PathVariable("pId") int idBienImmobilier) {
 		return aAcheterService.getAacheterById(idBienImmobilier);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/getRegionById/{pRegion}", produces="application/json")
+	public List<Aacheter> getAAcheterByRegionRest(@PathVariable("pRegion") String region) {
+		List<Aacheter> listeachat = aAcheterService.getAacheterByRegion(region);
+		
+		for(Aacheter elem: listeachat) {
+		System.out.println("rest------------"+elem);
+		}
+		
+		return listeachat;
 	}
 
 }

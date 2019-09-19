@@ -19,7 +19,10 @@ public class Aacheter extends BienImmobilier {
 	public Aacheter() {
 		super();
 	}
+	
+	
 
+	
 	public Aacheter(String statutBienImmobilier, String dateSoumissionBienImmobilier, String localisationBienImmobilier,
 			String dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier,
 			byte[] photo, String numeroFactureBienImmobilier, String dateFactureBienImmobilier,
@@ -34,6 +37,11 @@ public class Aacheter extends BienImmobilier {
 		this.etatAAcheter = etatAAcheter;
 	}
 
+	
+	
+
+
+
 	public Aacheter(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
 			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
@@ -47,6 +55,9 @@ public class Aacheter extends BienImmobilier {
 		this.prixDemandeAAcheter = prixDemandeAAcheter;
 		this.etatAAcheter = etatAAcheter;
 	}
+
+
+
 
 	// Getters et setters:
 	public double getPrixDemandeAAcheter() {

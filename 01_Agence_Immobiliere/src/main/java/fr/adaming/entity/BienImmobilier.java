@@ -1,6 +1,7 @@
 package fr.adaming.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,6 +18,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -28,18 +31,28 @@ public class BienImmobilier implements Serializable {
 
 	// Attributs:
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idBienImmobilier;
 	private String statutBienImmobilier;
+	
 	private String dateSoumissionBienImmobilier;
+	
 	private String localisationBienImmobilier;
+	
+
 	private String dateDispoBienImmobilier;
+	
 	private String revenuCadastralBienImmobilier;
 	private String paysBienImmobilier;
+	
 	@Column(name = "photo", columnDefinition = "longblob")
 	private byte[] photo;
+	
 	private String numeroFactureBienImmobilier;
+	
+	
 	private String dateFactureBienImmobilier;
+	
 	private String numeroAffaireBienImmobilier;
 	private String typeDeBienImmobilier;
 

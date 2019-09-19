@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.adaming.entity.Aacheter;
+import fr.adaming.entity.Alouer;
 import fr.adaming.entity.Visite;
 import fr.adaming.service.IVisiteService;
 
@@ -26,8 +29,10 @@ public class VisiteRestController {
 		}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/add", produces="application/json", consumes="application/json")
-	public void addVisiteRest(@RequestBody Visite v) {
-		visiteService.addVisite(v);
+	public void addVisiteRest(@RequestBody Visite v,@RequestParam("idImmobil") int idImmo,@RequestParam("type") String type) {
+		
+		
+		visiteService.addVisite(v, type, idImmo);
 	}
 	
 	@RequestMapping(value="/delete/{pId}", method=RequestMethod.DELETE)

@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="agent")
 public class Agent extends Personne  {
@@ -16,6 +18,7 @@ public class Agent extends Personne  {
 	private int idAgent;
 	
 	@OneToMany(mappedBy="agent", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<BienImmobilier> bienImmobiliers;
 
 	

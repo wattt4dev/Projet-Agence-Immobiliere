@@ -1,5 +1,9 @@
 package fr.adaming.rest;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -112,7 +116,7 @@ public class PDFAvendreRestController {
 				
 				//Effectuee 
 				canvas.setTextMatrix(230, 500);
-				canvas.showText(l.getDateFactureBienImmobilier());
+				canvas.showText(l.getDateSoumissionBienImmobilier());
 				
 				//Adressse du bien 
 				canvas.setTextMatrix(380, 500);
@@ -136,7 +140,7 @@ public class PDFAvendreRestController {
 				
 				//Date de disponibilité 
 				canvas.setTextMatrix(172, 352);
-				canvas.showText(l.getDateDispoBienImmobilier());
+				canvas.showText(l.getDateSoumissionBienImmobilier());
 				
 				//Prix demander
 				canvas.setTextMatrix(435, 255);

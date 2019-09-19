@@ -19,8 +19,46 @@ public class Aacheter extends BienImmobilier {
 	public Aacheter() {
 		super();
 	}
+	
+	
 
 	
+	public Aacheter(String statutBienImmobilier, String dateSoumissionBienImmobilier, String localisationBienImmobilier,
+			String dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier,
+			byte[] photo, String numeroFactureBienImmobilier, String dateFactureBienImmobilier,
+			String numeroAffaireBienImmobilier, String typeDeBienImmobilier, List<Visite> listeVisites, Agent agent,
+			Categorie categorie, Client client, Proprietaire proprietaire, Contrat contrat, double prixDemandeAAcheter,
+			String etatAAcheter) {
+		super(statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier, dateDispoBienImmobilier,
+				revenuCadastralBienImmobilier, paysBienImmobilier, photo, numeroFactureBienImmobilier,
+				dateFactureBienImmobilier, numeroAffaireBienImmobilier, typeDeBienImmobilier, listeVisites, agent,
+				categorie, client, proprietaire, contrat);
+		this.prixDemandeAAcheter = prixDemandeAAcheter;
+		this.etatAAcheter = etatAAcheter;
+	}
+
+	
+	
+
+
+
+	public Aacheter(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
+			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
+			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
+			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
+			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
+			Contrat contrat, double prixDemandeAAcheter, String etatAAcheter) {
+		super(idBienImmobilier, statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier,
+				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier, photo,
+				numeroFactureBienImmobilier, dateFactureBienImmobilier, numeroAffaireBienImmobilier,
+				typeDeBienImmobilier, listeVisites, agent, categorie, client, proprietaire, contrat);
+		this.prixDemandeAAcheter = prixDemandeAAcheter;
+		this.etatAAcheter = etatAAcheter;
+	}
+
+
+
+
 	// Getters et setters:
 	public double getPrixDemandeAAcheter() {
 		return prixDemandeAAcheter;

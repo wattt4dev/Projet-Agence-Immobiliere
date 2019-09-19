@@ -19,6 +19,7 @@ public class AgentRestController {
 
 	@RequestMapping(method=RequestMethod.POST, value="/isExist", produces="application/json", consumes="application/json")
 	public Agent isExistRest(@RequestBody Agent a) {
+		System.out.println(a.getIdAgent()+"---"+a.getMdpAgent());
 		return agentService.isExist(a);
 	}
 }

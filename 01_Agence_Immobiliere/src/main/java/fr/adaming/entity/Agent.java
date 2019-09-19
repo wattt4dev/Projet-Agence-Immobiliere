@@ -61,6 +61,11 @@ public class Agent extends Personne  {
 	public void setBienImmobiliers(List<BienImmobilier> bienImmobiliers) {
 		this.bienImmobiliers = bienImmobiliers;
 	}
+
+	@Override
+	public String toString() {
+		return "Agent [mdpAgent=" + mdpAgent + ", idAgent=" + idAgent + "]";
+	}
 	
 	
 

@@ -54,8 +54,8 @@ public class VisiteDaoImpl implements IVisiteDao {
 	@Transactional
 	@Override
 	public Visite getVisiteById(int idVisite) {
-		Query query = em.createQuery("SELECT v FROM Visite v WHERE v.idVisite= :pIdvisite");
-		query.setParameter("pIdvisite", idVisite);
+		Query query = em.createQuery("SELECT v FROM Visite v WHERE v.idVisite= :pId");
+		query.setParameter("pId", idVisite);
 		Visite visite = (Visite) query.getSingleResult();	
 		return visite;
 	}

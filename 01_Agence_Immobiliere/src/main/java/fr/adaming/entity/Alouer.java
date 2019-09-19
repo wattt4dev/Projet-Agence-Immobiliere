@@ -22,40 +22,6 @@ public class Alouer extends BienImmobilier{
 		super();
 	}
 
-	public Alouer(String statutBienImmobilier, String dateSoumissionBienImmobilier, String localisationBienImmobilier,
-			String dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier,
-			byte[] photo, String numeroFactureBienImmobilier, String dateFactureBienImmobilier,
-			String numeroAffaireBienImmobilier, String typeDeBienImmobilier, List<Visite> listeVisites, Agent agent,
-			Categorie categorie, Client client, Proprietaire proprietaire, Contrat contrat, double cautionALouer,
-			double loyerALouer, double chargesALouer, String bailALouer, String garnituresALouer) {
-		super(statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier, dateDispoBienImmobilier,
-				revenuCadastralBienImmobilier, paysBienImmobilier, photo, numeroFactureBienImmobilier,
-				dateFactureBienImmobilier, numeroAffaireBienImmobilier, typeDeBienImmobilier, listeVisites, agent,
-				categorie, client, proprietaire, contrat);
-		this.cautionALouer = cautionALouer;
-		this.loyerALouer = loyerALouer;
-		this.chargesALouer = chargesALouer;
-		this.bailALouer = bailALouer;
-		this.garnituresALouer = garnituresALouer;
-	}
-
-	public Alouer(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
-			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
-			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
-			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
-			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
-			Contrat contrat, double cautionALouer, double loyerALouer, double chargesALouer, String bailALouer,
-			String garnituresALouer) {
-		super(idBienImmobilier, statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier,
-				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier, photo,
-				numeroFactureBienImmobilier, dateFactureBienImmobilier, numeroAffaireBienImmobilier,
-				typeDeBienImmobilier, listeVisites, agent, categorie, client, proprietaire, contrat);
-		this.cautionALouer = cautionALouer;
-		this.loyerALouer = loyerALouer;
-		this.chargesALouer = chargesALouer;
-		this.bailALouer = bailALouer;
-		this.garnituresALouer = garnituresALouer;
-	}
 
 	// Getters et setters:
 	public double getCautionALouer() {

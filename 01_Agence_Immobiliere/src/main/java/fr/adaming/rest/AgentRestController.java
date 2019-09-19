@@ -13,12 +13,17 @@ import fr.adaming.service.IAgentService;
 @RestController
 @RequestMapping("/agent")
 public class AgentRestController {
-	
+
 	@Autowired
 	IAgentService agentService;
 
-	@RequestMapping(method=RequestMethod.POST, value="/isExist", produces="application/json", consumes="application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/isExist", produces = "application/json", consumes = "application/json")
 	public Agent isExistRest(@RequestBody Agent a) {
-		return agentService.isExist(a);
+		System.out.println("------------       " + a.getIdAgent() + "     " + a.getMdpAgent());
+
+		Agent agent1 = agentService.isExist(a);
+
+		System.out.println("----- rest   :   "+agent1);
+		return agent1;
 	}
 }

@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="agent")
 public class Agent extends Personne  {
@@ -16,6 +18,7 @@ public class Agent extends Personne  {
 	private int idAgent;
 	
 	@OneToMany(mappedBy="agent", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<BienImmobilier> bienImmobiliers;
 
 	
@@ -57,6 +60,13 @@ public class Agent extends Personne  {
 
 	public void setBienImmobiliers(List<BienImmobilier> bienImmobiliers) {
 		this.bienImmobiliers = bienImmobiliers;
+	}
+
+	@Override
+	public String toString() {
+		return "Agent [mdpAgent=" + mdpAgent + ", idAgent=" + idAgent+ ", getIdPersonne()=" + getIdPersonne() 
+				+ ", getNomPersonne()=" + getNomPersonne()
+				+ ", getTelephonePrive()=" + getTelephonePrive() + "]";
 	}
 	
 	

@@ -40,6 +40,7 @@ public class BienImmobilier implements Serializable {
 	private String dateFactureBienImmobilier;
 	private String numeroAffaireBienImmobilier;
 	private String typeDeBienImmobilier;
+	private String region;
 
 	// Approche UML
 
@@ -77,38 +78,14 @@ public class BienImmobilier implements Serializable {
 		super();
 	}
 
-	public BienImmobilier(String statutBienImmobilier, String dateSoumissionBienImmobilier,
-			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
-			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
-			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
-			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
-			Contrat contrat) {
-		super();
-		this.statutBienImmobilier = statutBienImmobilier;
-		this.dateSoumissionBienImmobilier = dateSoumissionBienImmobilier;
-		this.localisationBienImmobilier = localisationBienImmobilier;
-		this.dateDispoBienImmobilier = dateDispoBienImmobilier;
-		this.revenuCadastralBienImmobilier = revenuCadastralBienImmobilier;
-		this.paysBienImmobilier = paysBienImmobilier;
-		this.photo = photo;
-		this.numeroFactureBienImmobilier = numeroFactureBienImmobilier;
-		this.dateFactureBienImmobilier = dateFactureBienImmobilier;
-		this.numeroAffaireBienImmobilier = numeroAffaireBienImmobilier;
-		this.typeDeBienImmobilier = typeDeBienImmobilier;
-		this.listeVisites = listeVisites;
-		this.agent = agent;
-		this.categorie = categorie;
-		this.client = client;
-		this.proprietaire = proprietaire;
-		this.contrat = contrat;
-	}
+	
 
 	public BienImmobilier(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
 			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
 			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
-			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
-			Contrat contrat) {
+			String region, List<Visite> listeVisites, Agent agent, Categorie categorie, Client client,
+			Proprietaire proprietaire, Contrat contrat) {
 		super();
 		this.idBienImmobilier = idBienImmobilier;
 		this.statutBienImmobilier = statutBienImmobilier;
@@ -122,6 +99,7 @@ public class BienImmobilier implements Serializable {
 		this.dateFactureBienImmobilier = dateFactureBienImmobilier;
 		this.numeroAffaireBienImmobilier = numeroAffaireBienImmobilier;
 		this.typeDeBienImmobilier = typeDeBienImmobilier;
+		this.region = region;
 		this.listeVisites = listeVisites;
 		this.agent = agent;
 		this.categorie = categorie;
@@ -129,6 +107,38 @@ public class BienImmobilier implements Serializable {
 		this.proprietaire = proprietaire;
 		this.contrat = contrat;
 	}
+
+
+
+
+	public BienImmobilier(String statutBienImmobilier, String dateSoumissionBienImmobilier,
+			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
+			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
+			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
+			String region, List<Visite> listeVisites, Agent agent, Categorie categorie, Client client,
+			Proprietaire proprietaire, Contrat contrat) {
+		super();
+		this.statutBienImmobilier = statutBienImmobilier;
+		this.dateSoumissionBienImmobilier = dateSoumissionBienImmobilier;
+		this.localisationBienImmobilier = localisationBienImmobilier;
+		this.dateDispoBienImmobilier = dateDispoBienImmobilier;
+		this.revenuCadastralBienImmobilier = revenuCadastralBienImmobilier;
+		this.paysBienImmobilier = paysBienImmobilier;
+		this.photo = photo;
+		this.numeroFactureBienImmobilier = numeroFactureBienImmobilier;
+		this.dateFactureBienImmobilier = dateFactureBienImmobilier;
+		this.numeroAffaireBienImmobilier = numeroAffaireBienImmobilier;
+		this.typeDeBienImmobilier = typeDeBienImmobilier;
+		this.region = region;
+		this.listeVisites = listeVisites;
+		this.agent = agent;
+		this.categorie = categorie;
+		this.client = client;
+		this.proprietaire = proprietaire;
+		this.contrat = contrat;
+	}
+
+
 
 	// Getters et setters:
 	public int getIdBienImmobilier() {
@@ -274,5 +284,14 @@ public class BienImmobilier implements Serializable {
 	public void setContrat(Contrat contrat) {
 		this.contrat = contrat;
 	}
+
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+	
 
 }

@@ -1,6 +1,7 @@
 package fr.adaming.entity;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -99,7 +100,8 @@ public class BienImmobilier implements Serializable {
 			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
 			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
-			String region) {
+			String region, List<Visite> listeVisites, Agent agent, Categorie categorie, Client client,
+			Proprietaire proprietaire, Contrat contrat) {
 		super();
 		this.idBienImmobilier = idBienImmobilier;
 		this.statutBienImmobilier = statutBienImmobilier;
@@ -114,6 +116,12 @@ public class BienImmobilier implements Serializable {
 		this.numeroAffaireBienImmobilier = numeroAffaireBienImmobilier;
 		this.typeDeBienImmobilier = typeDeBienImmobilier;
 		this.region = region;
+		this.listeVisites = listeVisites;
+		this.agent = agent;
+		this.categorie = categorie;
+		this.client = client;
+		this.proprietaire = proprietaire;
+		this.contrat = contrat;
 	}
 
 
@@ -123,7 +131,8 @@ public class BienImmobilier implements Serializable {
 			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
 			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
-			String region) {
+			String region, List<Visite> listeVisites, Agent agent, Categorie categorie, Client client,
+			Proprietaire proprietaire, Contrat contrat) {
 		super();
 		this.statutBienImmobilier = statutBienImmobilier;
 		this.dateSoumissionBienImmobilier = dateSoumissionBienImmobilier;
@@ -137,7 +146,12 @@ public class BienImmobilier implements Serializable {
 		this.numeroAffaireBienImmobilier = numeroAffaireBienImmobilier;
 		this.typeDeBienImmobilier = typeDeBienImmobilier;
 		this.region = region;
-		
+		this.listeVisites = listeVisites;
+		this.agent = agent;
+		this.categorie = categorie;
+		this.client = client;
+		this.proprietaire = proprietaire;
+		this.contrat = contrat;
 	}
 
 
@@ -294,6 +308,21 @@ public class BienImmobilier implements Serializable {
 	public void setRegion(String region) {
 		this.region = region;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "BienImmobilier [idBienImmobilier=" + idBienImmobilier + ", statutBienImmobilier=" + statutBienImmobilier
+				+ ", dateSoumissionBienImmobilier=" + dateSoumissionBienImmobilier + ", localisationBienImmobilier="
+				+ localisationBienImmobilier + ", dateDispoBienImmobilier=" + dateDispoBienImmobilier
+				+ ", revenuCadastralBienImmobilier=" + revenuCadastralBienImmobilier + ", paysBienImmobilier="
+				+ paysBienImmobilier + ", photo=" + Arrays.toString(photo) + ", numeroFactureBienImmobilier="
+				+ numeroFactureBienImmobilier + ", dateFactureBienImmobilier=" + dateFactureBienImmobilier
+				+ ", numeroAffaireBienImmobilier=" + numeroAffaireBienImmobilier + ", typeDeBienImmobilier="
+				+ typeDeBienImmobilier + ", region=" + region + "]";
+	}
+	
 	
 
 }

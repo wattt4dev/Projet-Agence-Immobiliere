@@ -48,6 +48,7 @@ public class ProprietaireDaoImpl implements IProprietaireDao {
 		updateQuery.setParameter("pAdresseProprietaire", p.getAdresseProprietaire());
 		updateQuery.setParameter("pNomPersonne", p.getNomPersonne());
 		updateQuery.setParameter("pTelephonePrive", p.getTelephonePrive());
+		updateQuery.setParameter("pIdProprietaire", p.getIdPersonne());
 
 		// Execution de la requête:
 		updateQuery.executeUpdate();
@@ -63,10 +64,10 @@ public class ProprietaireDaoImpl implements IProprietaireDao {
 
 	@Transactional
 	@Override
-	public Proprietaire getProprietaireById(int idProprietaire) {
+	public Proprietaire getProprietaireById(int idPersonne) {
 		String getByIdRequete = "SELECT Proprietaire FROM Proprietaire proprietaire WHERE proprietaire.idPersonne=:pIdProprietaire";
 		Query getByIdJpqlReq = em.createQuery(getByIdRequete);
-		getByIdJpqlReq.setParameter("pIdProprietaire", idProprietaire);
+		getByIdJpqlReq.setParameter("pIdProprietaire", idPersonne);
 		Proprietaire proprietaireById = (Proprietaire) getByIdJpqlReq.getSingleResult();
 		return proprietaireById;
 	}

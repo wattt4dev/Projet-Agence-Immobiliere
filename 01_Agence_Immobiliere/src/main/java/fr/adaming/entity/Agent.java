@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+import org.springframework.context.annotation.Lazy;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -64,7 +68,10 @@ public class Agent extends Personne  {
 
 	@Override
 	public String toString() {
-		return "Agent [mdpAgent=" + mdpAgent + ", idAgent=" + idAgent + "]";
+
+		return "Agent [mdpAgent=" + mdpAgent + ", idAgent=" + idAgent+ ", getIdPersonne()=" + getIdPersonne() 
+				+ ", getNomPersonne()=" + getNomPersonne()
+				+ ", getTelephonePrive()=" + getTelephonePrive() + "]";
 	}
 	
 	

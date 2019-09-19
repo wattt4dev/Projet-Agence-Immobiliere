@@ -43,6 +43,11 @@ public class AAcheterServiceImpl implements IAAcheterService{
 	public Aacheter getAacheterById(int idBienImmobilier) {
 		return aAcheterDao.getAacheterById(idBienImmobilier);
 	}
+
+	@Override
+	public List<Aacheter> getAacheterByRegion(String region) {
+		return aAcheterDao.getAacheterByDepartement(region);
+	}
 	
 	
 	

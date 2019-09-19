@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.adaming.dao.IAlouerDao;
+import fr.adaming.entity.Aacheter;
 import fr.adaming.entity.Alouer;
 
 @Service
@@ -41,5 +42,12 @@ public class ALouerServiceImpl implements IALouerService {
 	public Alouer getAlouerByIdService(int idBienImmobilier) {
 		return aLouerDao.getAlouerById(idBienImmobilier);
 	}
+
+	@Override
+	public List<Alouer> getAlouerByDepartement(String departement) {
+		return aLouerDao.getAlouerByDepartement(departement);
+	}
+
+	
 
 }

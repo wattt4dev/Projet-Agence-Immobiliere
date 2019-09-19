@@ -45,4 +45,8 @@ public class ALouerRestController {
 		return aLouerService.getAlouerByIdService(idBienImmobilier);
 	}
 
+	@RequestMapping(method=RequestMethod.GET, value="/getRegionById/{pRegion}", produces="application/json")
+	public List<Alouer> getALouerByRegionRest(@PathVariable("pRegion") String region) {
+		return aLouerService.getAlouerByDepartement(region);
+	}
 }

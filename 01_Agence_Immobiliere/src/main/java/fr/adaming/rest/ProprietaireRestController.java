@@ -41,7 +41,7 @@ public class ProprietaireRestController {
 		proprietaireService.deleteProprietaire(idProprietaire);
 	}
 
-	@RequestMapping(value = "/update", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value = "/update", method = RequestMethod.PUT, consumes = "application/json")
 	public void updateProprietaireRest(@RequestBody Proprietaire proprietaireIn) {
 		proprietaireService.updateProprietaire(proprietaireIn);
 	}

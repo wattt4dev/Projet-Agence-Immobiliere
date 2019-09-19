@@ -14,7 +14,12 @@ public class AgentServiceImpl implements IAgentService{
 	
 	@Override
 	public Agent isExist(Agent a) {
-		return aDao.isExist(a);
+		
+		
+		Agent agent1 =aDao.isExist(a);
+
+		System.out.println(agent1);
+		return agent1;
 	}
 
 }

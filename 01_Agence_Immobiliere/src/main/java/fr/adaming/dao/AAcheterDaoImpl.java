@@ -65,4 +65,15 @@ public class AAcheterDaoImpl implements IAAcheterDao{
 		return achat;
 	}
 
+	@Override
+	public List<Aacheter> getAacheterByDepartement(String region) {
+		Query query = em.createQuery("FROM Aacheter aa WHERE aa.region = :pRegion");
+		query.setParameter("pRegion", region);
+		List<Aacheter> aachterRegion =query.getResultList();
+		for(Aacheter elem: aachterRegion) {
+		System.out.println("dao------------"+elem);
+		}
+		return aachterRegion;
+	}
+
 }

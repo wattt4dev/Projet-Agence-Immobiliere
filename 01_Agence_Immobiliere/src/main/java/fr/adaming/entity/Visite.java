@@ -75,4 +75,11 @@ public class Visite implements Serializable{
 		this.dateVisite = dateVisite;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Visite [idVisite=" + idVisite + ", dateVisite=" + dateVisite + ", bienImmobilier=" + bienImmobilier
+				+ "]";
+	}
+
 }

@@ -37,6 +37,7 @@ public class AgentDaoImpl implements IAgentDao {
 
 			// 3. execution et récupération du résultat
 			Agent agent1 = (Agent) isExistReq.getSingleResult();
+
 			System.out.println(agent1);
 
 			return agent1;

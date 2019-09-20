@@ -59,6 +59,7 @@ public class BienImmobilier implements Serializable {
 	
 	private String numeroAffaireBienImmobilier;
 	private String typeDeBienImmobilier;
+	private String region;
 
 	// Approche UML
 
@@ -294,5 +295,15 @@ public class BienImmobilier implements Serializable {
 	public void setContrat(Contrat contrat) {
 		this.contrat = contrat;
 	}
+
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+	
+	
 
 }

@@ -1,7 +1,6 @@
 package fr.adaming.entity;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -22,8 +21,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
@@ -56,13 +59,12 @@ public class BienImmobilier implements Serializable {
 	
 	private String numeroAffaireBienImmobilier;
 	private String typeDeBienImmobilier;
-	private String region;
 
 	// Approche UML
 
 	// One BienImmobilier ToMany Visite
-	@OneToMany(mappedBy = "bienImmobilier", cascade = CascadeType.ALL)
-	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany(mappedBy = "bienImmobilier", cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+	@Fetch(FetchMode.SELECT)
 	private List<Visite> listeVisites;
 
 	// ManyBienImmobilier to One Agent
@@ -94,14 +96,38 @@ public class BienImmobilier implements Serializable {
 		super();
 	}
 
-	
+	public BienImmobilier(String statutBienImmobilier, String dateSoumissionBienImmobilier,
+			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
+			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
+			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
+			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
+			Contrat contrat) {
+		super();
+		this.statutBienImmobilier = statutBienImmobilier;
+		this.dateSoumissionBienImmobilier = dateSoumissionBienImmobilier;
+		this.localisationBienImmobilier = localisationBienImmobilier;
+		this.dateDispoBienImmobilier = dateDispoBienImmobilier;
+		this.revenuCadastralBienImmobilier = revenuCadastralBienImmobilier;
+		this.paysBienImmobilier = paysBienImmobilier;
+		this.photo = photo;
+		this.numeroFactureBienImmobilier = numeroFactureBienImmobilier;
+		this.dateFactureBienImmobilier = dateFactureBienImmobilier;
+		this.numeroAffaireBienImmobilier = numeroAffaireBienImmobilier;
+		this.typeDeBienImmobilier = typeDeBienImmobilier;
+		this.listeVisites = listeVisites;
+		this.agent = agent;
+		this.categorie = categorie;
+		this.client = client;
+		this.proprietaire = proprietaire;
+		this.contrat = contrat;
+	}
 
 	public BienImmobilier(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
 			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
 			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
-			String region, List<Visite> listeVisites, Agent agent, Categorie categorie, Client client,
-			Proprietaire proprietaire, Contrat contrat) {
+			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
+			Contrat contrat) {
 		super();
 		this.idBienImmobilier = idBienImmobilier;
 		this.statutBienImmobilier = statutBienImmobilier;
@@ -115,7 +141,6 @@ public class BienImmobilier implements Serializable {
 		this.dateFactureBienImmobilier = dateFactureBienImmobilier;
 		this.numeroAffaireBienImmobilier = numeroAffaireBienImmobilier;
 		this.typeDeBienImmobilier = typeDeBienImmobilier;
-		this.region = region;
 		this.listeVisites = listeVisites;
 		this.agent = agent;
 		this.categorie = categorie;
@@ -123,38 +148,6 @@ public class BienImmobilier implements Serializable {
 		this.proprietaire = proprietaire;
 		this.contrat = contrat;
 	}
-
-
-
-
-	public BienImmobilier(String statutBienImmobilier, String dateSoumissionBienImmobilier,
-			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
-			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
-			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
-			String region, List<Visite> listeVisites, Agent agent, Categorie categorie, Client client,
-			Proprietaire proprietaire, Contrat contrat) {
-		super();
-		this.statutBienImmobilier = statutBienImmobilier;
-		this.dateSoumissionBienImmobilier = dateSoumissionBienImmobilier;
-		this.localisationBienImmobilier = localisationBienImmobilier;
-		this.dateDispoBienImmobilier = dateDispoBienImmobilier;
-		this.revenuCadastralBienImmobilier = revenuCadastralBienImmobilier;
-		this.paysBienImmobilier = paysBienImmobilier;
-		this.photo = photo;
-		this.numeroFactureBienImmobilier = numeroFactureBienImmobilier;
-		this.dateFactureBienImmobilier = dateFactureBienImmobilier;
-		this.numeroAffaireBienImmobilier = numeroAffaireBienImmobilier;
-		this.typeDeBienImmobilier = typeDeBienImmobilier;
-		this.region = region;
-		this.listeVisites = listeVisites;
-		this.agent = agent;
-		this.categorie = categorie;
-		this.client = client;
-		this.proprietaire = proprietaire;
-		this.contrat = contrat;
-	}
-
-
 
 	// Getters et setters:
 	public int getIdBienImmobilier() {
@@ -253,6 +246,7 @@ public class BienImmobilier implements Serializable {
 		this.typeDeBienImmobilier = typeDeBienImmobilier;
 	}
 
+	@JsonIgnoreProperties({"bienImmobilier"})
 	public List<Visite> getListeVisites() {
 		return listeVisites;
 	}
@@ -300,29 +294,5 @@ public class BienImmobilier implements Serializable {
 	public void setContrat(Contrat contrat) {
 		this.contrat = contrat;
 	}
-
-	public String getRegion() {
-		return region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-	}
-
-
-
-	@Override
-	public String toString() {
-		return "BienImmobilier [idBienImmobilier=" + idBienImmobilier + ", statutBienImmobilier=" + statutBienImmobilier
-				+ ", dateSoumissionBienImmobilier=" + dateSoumissionBienImmobilier + ", localisationBienImmobilier="
-				+ localisationBienImmobilier + ", dateDispoBienImmobilier=" + dateDispoBienImmobilier
-				+ ", revenuCadastralBienImmobilier=" + revenuCadastralBienImmobilier + ", paysBienImmobilier="
-				+ paysBienImmobilier + ", photo=" + Arrays.toString(photo) + ", numeroFactureBienImmobilier="
-				+ numeroFactureBienImmobilier + ", dateFactureBienImmobilier=" + dateFactureBienImmobilier
-				+ ", numeroAffaireBienImmobilier=" + numeroAffaireBienImmobilier + ", typeDeBienImmobilier="
-				+ typeDeBienImmobilier + ", region=" + region + "]";
-	}
-	
-	
 
 }

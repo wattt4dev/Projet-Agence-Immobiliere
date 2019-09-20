@@ -56,6 +56,7 @@ public class BienImmobilier implements Serializable {
 	
 	private String numeroAffaireBienImmobilier;
 	private String typeDeBienImmobilier;
+	
 	private String region;
 
 	// Approche UML

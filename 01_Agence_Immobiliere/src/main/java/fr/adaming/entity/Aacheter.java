@@ -20,33 +20,41 @@ public class Aacheter extends BienImmobilier {
 		super();
 	}
 
+	
+
 	public Aacheter(String statutBienImmobilier, String dateSoumissionBienImmobilier, String localisationBienImmobilier,
 			String dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier,
 			byte[] photo, String numeroFactureBienImmobilier, String dateFactureBienImmobilier,
 			String numeroAffaireBienImmobilier, String typeDeBienImmobilier, List<Visite> listeVisites, Agent agent,
-			Categorie categorie, Client client, Proprietaire proprietaire, Contrat contrat, double prixDemandeAAcheter,
-			String etatAAcheter) {
+			Categorie categorie, Client client, Proprietaire proprietaire, Contrat contrat, String region,
+			double prixDemandeAAcheter, String etatAAcheter) {
 		super(statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier, dateDispoBienImmobilier,
 				revenuCadastralBienImmobilier, paysBienImmobilier, photo, numeroFactureBienImmobilier,
 				dateFactureBienImmobilier, numeroAffaireBienImmobilier, typeDeBienImmobilier, listeVisites, agent,
-				categorie, client, proprietaire, contrat);
+				categorie, client, proprietaire, contrat, region);
 		this.prixDemandeAAcheter = prixDemandeAAcheter;
 		this.etatAAcheter = etatAAcheter;
 	}
+	
+	
+
+
 
 	public Aacheter(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
 			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
 			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
 			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
 			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
-			Contrat contrat, double prixDemandeAAcheter, String etatAAcheter) {
+			Contrat contrat, String region, double prixDemandeAAcheter, String etatAAcheter) {
 		super(idBienImmobilier, statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier,
 				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier, photo,
 				numeroFactureBienImmobilier, dateFactureBienImmobilier, numeroAffaireBienImmobilier,
-				typeDeBienImmobilier, listeVisites, agent, categorie, client, proprietaire, contrat);
+				typeDeBienImmobilier, listeVisites, agent, categorie, client, proprietaire, contrat, region);
 		this.prixDemandeAAcheter = prixDemandeAAcheter;
 		this.etatAAcheter = etatAAcheter;
 	}
+
+
 
 	// Getters et setters:
 	public double getPrixDemandeAAcheter() {

@@ -19,11 +19,7 @@ public class Aacheter extends BienImmobilier {
 	public Aacheter() {
 		super();
 	}
-	
-	
 
-
-	
 	public Aacheter(String statutBienImmobilier, String dateSoumissionBienImmobilier, String localisationBienImmobilier,
 			String dateDispoBienImmobilier, String revenuCadastralBienImmobilier, String paysBienImmobilier,
 			byte[] photo, String numeroFactureBienImmobilier, String dateFactureBienImmobilier,
@@ -32,16 +28,11 @@ public class Aacheter extends BienImmobilier {
 			String etatAAcheter) {
 		super(statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier, dateDispoBienImmobilier,
 				revenuCadastralBienImmobilier, paysBienImmobilier, photo, numeroFactureBienImmobilier,
-				dateFactureBienImmobilier, numeroAffaireBienImmobilier, typeDeBienImmobilier, etatAAcheter, listeVisites, agent,
+				dateFactureBienImmobilier, numeroAffaireBienImmobilier, typeDeBienImmobilier, listeVisites, agent,
 				categorie, client, proprietaire, contrat);
 		this.prixDemandeAAcheter = prixDemandeAAcheter;
 		this.etatAAcheter = etatAAcheter;
 	}
-
-	
-	
-
-
 
 	public Aacheter(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
 			String localisationBienImmobilier, String dateDispoBienImmobilier, String revenuCadastralBienImmobilier,
@@ -52,12 +43,10 @@ public class Aacheter extends BienImmobilier {
 		super(idBienImmobilier, statutBienImmobilier, dateSoumissionBienImmobilier, localisationBienImmobilier,
 				dateDispoBienImmobilier, revenuCadastralBienImmobilier, paysBienImmobilier, photo,
 				numeroFactureBienImmobilier, dateFactureBienImmobilier, numeroAffaireBienImmobilier,
-				typeDeBienImmobilier, etatAAcheter, listeVisites, agent, categorie, client, proprietaire, contrat);
+				typeDeBienImmobilier, listeVisites, agent, categorie, client, proprietaire, contrat);
 		this.prixDemandeAAcheter = prixDemandeAAcheter;
 		this.etatAAcheter = etatAAcheter;
 	}
-
-
 
 	// Getters et setters:
 	public double getPrixDemandeAAcheter() {
@@ -76,5 +65,4 @@ public class Aacheter extends BienImmobilier {
 		this.etatAAcheter = etatAAcheter;
 	}
 
-	
 }

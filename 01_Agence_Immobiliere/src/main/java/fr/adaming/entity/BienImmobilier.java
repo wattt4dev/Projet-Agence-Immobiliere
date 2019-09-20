@@ -2,7 +2,6 @@ package fr.adaming.entity;
 
 import java.io.Serializable;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -56,6 +55,7 @@ public class BienImmobilier implements Serializable {
 	
 	private String numeroAffaireBienImmobilier;
 	private String typeDeBienImmobilier;
+	
 	
 	private String region;
 

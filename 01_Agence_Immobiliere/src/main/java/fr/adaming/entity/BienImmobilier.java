@@ -1,6 +1,8 @@
 package fr.adaming.entity;
 
 import java.io.Serializable;
+
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -59,6 +61,13 @@ public class BienImmobilier implements Serializable {
 	
 	private String numeroAffaireBienImmobilier;
 	private String typeDeBienImmobilier;
+<<<<<<< HEAD
+=======
+
+	
+	
+>>>>>>> branch 'master' of https://github.com/wattt4dev/Projet-Agence-Immobiliere.git
+	private String region;
 
 	// Approche UML
 
@@ -101,7 +110,7 @@ public class BienImmobilier implements Serializable {
 			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
 			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
 			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
-			Contrat contrat) {
+			Contrat contrat, String region) {
 		super();
 		this.statutBienImmobilier = statutBienImmobilier;
 		this.dateSoumissionBienImmobilier = dateSoumissionBienImmobilier;
@@ -120,6 +129,7 @@ public class BienImmobilier implements Serializable {
 		this.client = client;
 		this.proprietaire = proprietaire;
 		this.contrat = contrat;
+		this.region = region;
 	}
 
 	public BienImmobilier(int idBienImmobilier, String statutBienImmobilier, String dateSoumissionBienImmobilier,
@@ -127,7 +137,7 @@ public class BienImmobilier implements Serializable {
 			String paysBienImmobilier, byte[] photo, String numeroFactureBienImmobilier,
 			String dateFactureBienImmobilier, String numeroAffaireBienImmobilier, String typeDeBienImmobilier,
 			List<Visite> listeVisites, Agent agent, Categorie categorie, Client client, Proprietaire proprietaire,
-			Contrat contrat) {
+			Contrat contrat, String region) {
 		super();
 		this.idBienImmobilier = idBienImmobilier;
 		this.statutBienImmobilier = statutBienImmobilier;
@@ -147,6 +157,7 @@ public class BienImmobilier implements Serializable {
 		this.client = client;
 		this.proprietaire = proprietaire;
 		this.contrat = contrat;
+		this.region = region;
 	}
 
 	// Getters et setters:
@@ -294,5 +305,15 @@ public class BienImmobilier implements Serializable {
 	public void setContrat(Contrat contrat) {
 		this.contrat = contrat;
 	}
+
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+	
+	
 
 }

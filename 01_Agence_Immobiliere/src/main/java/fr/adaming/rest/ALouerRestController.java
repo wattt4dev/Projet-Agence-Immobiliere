@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.adaming.entity.Aacheter;
 import fr.adaming.entity.Alouer;
 import fr.adaming.service.IALouerService;
 
@@ -47,6 +48,10 @@ public class ALouerRestController {
 
 	@RequestMapping(method=RequestMethod.GET, value="/getRegionById/{pRegion}", produces="application/json")
 	public List<Alouer> getALouerByRegionRest(@PathVariable("pRegion") String region) {
-		return aLouerService.getAlouerByDepartement(region);
+		List<Alouer> listelouer = aLouerService.getAlouerByDepartement(region);
+		for(Alouer elem: listelouer) {
+			System.out.println("rest a louer------------"+elem);
+			}
+		return listelouer;
 	}
 }
